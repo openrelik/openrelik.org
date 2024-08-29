@@ -8,7 +8,7 @@ weight = 2
 ### Forensic Artifacts
 
 * **Upload and store artifacts:** Forensic artifacts are uploaded to the platform and stored as files on the server.
-* **Organise:** Users can create folders to efficiently organize and manage their uploaded forensic artifacts.
+* **Organize:** Users can create folders to efficiently organize and manage their uploaded forensic artifacts.
 
 {{< figure src="/openrelik.org/screenshot-files-folders.png" caption="Example folder with files and subfolder">}}
 
