@@ -2,7 +2,7 @@
 title = 'Welcome to the OpenRelik Documentation'
 linkTitle = 'Documentation'
 date = 2024-08-14T08:22:26+02:00
-draft = true
+draft = false
 +++
 
 OpenRelik is a powerful, open-source platform designed to streamline and enhance your digital forensic investigations. Whether you're a seasoned professional or just starting your journey in the field, this documentation hub is your go-to resource.

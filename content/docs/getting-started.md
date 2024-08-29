@@ -1,7 +1,7 @@
 +++
 title = 'Getting started'
 date = 2024-08-14T08:22:26+02:00
-draft = true
+draft = false
 weight = 1
 +++
 
