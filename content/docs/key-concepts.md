@@ -10,7 +10,7 @@ weight = 2
 * **Uploaded and Stored:** Forensic artifacts are uploaded to the platform and stored as files on the server.
 * **Organization:** Users can create folders to efficiently organize and manage their uploaded forensic artifacts.
 
-{{< figure src="/screenshot-files-folders.png" caption="Example folder with files and subfolder">}}
+{{< figure src="/openrelik.org/screenshot-files-folders.png" caption="Example folder with files and subfolder">}}
 
 ### Workflows
 
@@ -21,7 +21,7 @@ weight = 2
 * **Copying and Sharing:** Workflows can be easily copied and shared between users, fostering collaboration and knowledge exchange.
 * **Workflow Templates:** Users can create and store workflow templates, allowing for quick and efficient reuse of workflows for different evidence sets.
 
-{{< figure src="/screenshot-workflow.png" caption="Example complex workflow (non-sensical string pipeline is for demostration purpose only)">}}
+{{< figure src="/openrelik.org/screenshot-workflow.png" caption="Example complex workflow (non-sensical string pipeline is for demostration purpose only)">}}
 
 ### Artifact Summaries
 
