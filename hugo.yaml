@@ -1,5 +1,5 @@
 # Configuration
-baseURL: "https://openrelik.github.io/openrelik.org/"
+baseURL: "https://openrelik.org/"
 title: "OpenRelik"
 
 enableRobotsTXT: true
