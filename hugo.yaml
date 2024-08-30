@@ -41,10 +41,11 @@ enableInlineShortcodes: true
 
 menu:
   main:
-    - identifier: documentation
-      name: Documentation
-      pageRef: /docs
-      weight: 1
+    -
+    #- identifier: documentation
+    #  name: Documentation
+    #  pageRef: /docs
+    #  weight: 1
     #- identifier: showcase
     #  name: Showcase
     #  pageRef: /showcase
@@ -61,11 +62,11 @@ menu:
     #  weight: 5
     #  params:
     #    type: search
-    - name: GitHub
-      weight: 6
-      url: "https://github.com/openrelik/"
-      params:
-        icon: github
+    #- name: GitHub
+    #  weight: 6
+    #  url: "https://github.com/openrelik/"
+    #  params:
+    #    icon: github
 
   sidebar:
     - name: More
@@ -92,7 +93,7 @@ params:
 
   page:
     # full (100%), wide (90rem), normal (1280px)
-    width: wide
+    width: normal
 
   theme:
     # light | dark | system

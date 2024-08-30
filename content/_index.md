@@ -4,16 +4,12 @@ draft = false
 toc = false
 +++
 
-# OpenRelik
+<center>
 
-OpenRelik is an open-source experimental platform designed to streamline and enhance collaborative digital forensic investigations. It empowers teams by combining modular workflows for custom investigative processes, an intuitive interface for efficient workflow management, real-time collaboration features, and a centralized repository for shared evidence and artifacts.
+### Coming soon..
 
-{{< cards >}}
-    {{< card link="docs/getting-started" title="Getting started" icon="star" >}}
-    {{< card link="docs/key-concepts" title="Key concepts" icon="key" >}}
-    {{< card link="docs/workflows" title="Workflows" icon="play" >}}
-{{< /cards >}}
+</center>
 
-<br>
+OpenRelik is a new open-source experimental platform designed to streamline collaborative digital forensic investigations. It empowers teams by combining modular workflows for custom investigative processes, an intuitive interface for efficient workflow management, real-time collaboration features, and a centralized repository for shared artifacts.
 
-{{< figure src="screenshot-frontpage.png">}}
+
