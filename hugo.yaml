@@ -63,7 +63,7 @@ menu:
     #    type: search
     - name: GitHub
       weight: 6
-      url: "https://github.com/orgs/openrelik/repositories"
+      url: "https://github.com/openrelik/"
       params:
         icon: github
 
@@ -73,7 +73,7 @@ menu:
         type: separator
       weight: 1
     - name: "OpenRelik on GitHub ↗"
-      url: "https://github.com/orgs/openrelik/repositories"
+      url: "https://github.com/openrelik/"
       weight: 2
 
 params:
