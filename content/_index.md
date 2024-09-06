@@ -12,7 +12,7 @@ toc = false
 
 <div class="hx-mb-12">
 {{< hextra/hero-subtitle >}}
-OpenRelik is a new open-source experimental platform designed to streamline collaborative digital forensic investigations. It empowers teams by combining modular workflows for custom investigative processes, an intuitive interface for efficient workflow management, real-time collaboration features, and a centralized repository for shared artifacts.
+OpenRelik is a new open-source experimental platform designed to streamline collaborative digital forensic investigations. It helps teams by combining modular workflows for custom investigative processes, an intuitive interface for efficient workflow management, real-time collaboration features, and a centralized repository for shared artifacts.
 {{< /hextra/hero-subtitle >}}
 </div>
 
