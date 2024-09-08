@@ -4,9 +4,17 @@ draft = false
 toc = false
 +++
 
-# OpenRelik
+<div class="hx-mt-6 hx-mb-6" style="margin-top:100px;">
+{{< hextra/hero-headline >}}
+  <img src="/logo.png" width="50" alt="OpenRelik Logo" style="display: inline; margin-top:-7px; margin-right: 10px">OpenRelik
+{{< /hextra/hero-headline >}}
+</div>
 
-OpenRelik is an open-source experimental platform designed to streamline collaborative digital forensic investigations. It empowers teams by combining modular workflows for custom investigative processes, an intuitive interface for efficient workflow management, real-time collaboration features, and a centralized repository for shared artifacts.
+<div class="hx-mb-12">
+{{< hextra/hero-subtitle >}}
+OpenRelik is a new open-source experimental platform designed to streamline collaborative digital forensic investigations. It helps teams by combining modular workflows for custom investigative processes, an intuitive interface for efficient workflow management, real-time collaboration features, and a centralized repository for shared artifacts.
+{{< /hextra/hero-subtitle >}}
+</div>
 
 {{< cards >}}
     {{< card link="docs/getting-started" title="Getting started" icon="star" >}}
