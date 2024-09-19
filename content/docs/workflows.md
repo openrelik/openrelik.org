@@ -5,7 +5,7 @@ draft = false
 weight = 3
 +++
 
-[![imagen](/life-of-a-workflow.png)](/life-of-a-workflow.png)
+[![imagen](/workflow.png)](/workflow.png)
 
 ### Independent containers
 

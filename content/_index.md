@@ -16,7 +16,7 @@ OpenRelik is an open-source (Apache-2.0) platform designed to streamline collabo
 {{< /hextra/hero-subtitle >}}
 </div>
 
-{{< figure src="screenshot-frontpage-7.png">}}
+{{< figure src="screenshot-frontpage.png">}}
 
 {{< cards >}}
     {{< card link="docs/key-concepts" title="Key concepts" icon="key" >}}
