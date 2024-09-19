@@ -16,8 +16,6 @@ OpenRelik is an open-source (Apache-2.0) platform designed to streamline collabo
 {{< /hextra/hero-subtitle >}}
 </div>
 
-{{< figure src="screenshot-frontpage.png">}}
-
 {{< cards >}}
     {{< card link="docs/key-concepts" title="Key concepts" icon="key" >}}
     {{< card link="docs/architecture" title="Archtecture" icon="information-circle" >}}
@@ -25,5 +23,5 @@ OpenRelik is an open-source (Apache-2.0) platform designed to streamline collabo
     {{< card link="https://github.com/openrelik/" title="Code" icon="github" >}}
 {{< /cards >}}
 
-<br>
+{{< figure src="screenshot-frontpage.png">}}
 
