@@ -4,18 +4,26 @@ draft = false
 toc = false
 +++
 
-<div class="hx-mt-6 hx-mb-6" style="margin-top:100px;">
+<div class="hx-mt-6 hx-mb-6">
 {{< hextra/hero-headline >}}
-  <img src="/logo.png" width="50" alt="OpenRelik Logo" style="display: inline; margin-top:-7px; margin-right: 10px">Coming soon..
+  <img src="/logo.png" width="50" alt="OpenRelik Logo" style="display: inline; margin-top:-7px; margin-right: 10px">OpenRelik
 {{< /hextra/hero-headline >}}
 </div>
 
-<div class="hx-mb-12">
+<div class="hx-mb-6">
 {{< hextra/hero-subtitle >}}
-OpenRelik is a new open-source experimental platform designed to streamline collaborative digital forensic investigations. It helps teams by combining modular workflows for custom investigative processes, an intuitive interface for efficient workflow management, real-time collaboration features, and a centralized repository for shared artifacts.
+OpenRelik is an open-source (Apache-2.0) platform designed to streamline collaborative digital forensic investigations. It combines modular workflows for custom investigative processes, an intuitive interface for efficient workflow management, real-time collaboration features, and a centralized repository for shared artifacts. The platformt is easy to extend with new workers to adapt to evolving forensic needs.
 {{< /hextra/hero-subtitle >}}
 </div>
 
+{{< figure src="screenshot-frontpage-7.png">}}
 
+{{< cards >}}
+    {{< card link="docs/key-concepts" title="Key concepts" icon="key" >}}
+    {{< card link="docs/architecture" title="Archtecture" icon="information-circle" >}}
+    {{< card link="docs/getting-started" title="Getting started" icon="star" >}}
+    {{< card link="https://github.com/openrelik/" title="Code" icon="github" >}}
+{{< /cards >}}
 
+<br>
 

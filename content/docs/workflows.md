@@ -5,6 +5,8 @@ draft = false
 weight = 3
 +++
 
+[![imagen](/life-of-a-workflow.png)](/life-of-a-workflow.png)
+
 ### Independent containers
 
 Workflows are the engines of the platform, orchestrating the execution of digital forensic tasks within a distributed, containerized environment. Each task within a workflow runs within its own Docker container, ensuring isolation and preventing interference between different processes.

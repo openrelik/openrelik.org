@@ -11,7 +11,7 @@ This installation guide will help you install OpenRelik on your local machine.
 
 ### 1. Install Docker
 
-Follow the official installation instructions to [install Docker Engine on your platform](https://docs.docker.com/engine/install/).
+Follow the official installation instructions to [install Docker Engine](https://docs.docker.com/engine/install/) for your platform.
 
 ### 2. Start the installation
 
@@ -83,12 +83,12 @@ docker compose up -d
 
 ### 5. Access openrelik UI
 ```shell
-http://localhost/
+http://localhost:8711/
 ```
 
 {{< callout type="info" >}}
 If you want to access the API server and the generated documentation:
 ```shell
-http://localhost:8000/api/v1/docs/
+http://localhost:8710/api/v1/docs/
 ```
 {{< /callout >}}

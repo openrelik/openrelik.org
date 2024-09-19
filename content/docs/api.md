@@ -3,7 +3,7 @@ title = 'API'
 linkTitle = 'API docs'
 date = 2024-08-14T08:22:26+02:00
 draft = false
-weight = 4
+weight = 5
 +++
 
 This documentation provides an overview to the RESTful API endpoints that power the digital forensics platform. This API allows you to interact with the platform programmatically, enabling automation and integration with your existing tools and workflows. Full API documentation is provided when installing the server.

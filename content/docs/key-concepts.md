@@ -2,7 +2,7 @@
 title = 'Key concepts'
 date = 2024-08-14T08:22:26+02:00
 draft = false
-weight = 2
+weight = 3
 +++
 
 ### Forensic Artifacts
