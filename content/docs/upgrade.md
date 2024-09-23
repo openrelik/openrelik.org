@@ -35,7 +35,7 @@ For some versions there will be updates to the database schema and this need to 
 in your deployed database. OpenRelik uses Alembic to manage these migrations.
 
 {{< callout type="warning" >}}
-Make sure you have backed up your database before you fo any migration.
+Make sure you have backed up your database before you do any migration.
 {{< /callout >}}
 
 ```
