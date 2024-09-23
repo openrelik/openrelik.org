@@ -30,5 +30,4 @@ weight = 3
 ### Additional Considerations
 
 * **Open-Source:** The platform is open-source, encouraging community contributions, transparency, and continuous improvement.
-* **Scalability:** The system is designed to scale efficiently, accommodating growing volumes of forensic data and user activity.
-data.
+* **Scalability:** The system is designed to scale efficiently, accommodating growing volumes of forensic data.
