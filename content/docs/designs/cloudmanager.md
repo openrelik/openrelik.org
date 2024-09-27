@@ -10,6 +10,12 @@ draft = false
 **Document version:** 1.0 <br>
 **Status:** Draft <br>
 
+{{< callout type="info" >}}
+**Request for comments**: If you have questions, comments or suggestions on this design, please share with the community and join the discussion.
+<br>
+**Discussion forum** for this design document can be found here: [https://github.com/orgs/openrelik/discussions/8](https://github.com/orgs/openrelik/discussions/8)
+{{< /callout >}}
+
 ### Introduction
 
 OpenRelik wants the capability to process cloud disks. This proposal describes a Cloud Manager service that handles all the cloud specific functionality and provides initial performance data. When dealing with cloud disks a lot of vendor specific tools need to be used to check, mount and unmount those disks. As OpenRelik strives to keep the workers as clean and dependency free as possible it makes sense to extract all of the cloud management functionality into a separate service.

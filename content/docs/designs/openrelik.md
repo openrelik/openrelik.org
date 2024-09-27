@@ -10,11 +10,9 @@ draft = false
 **Status:** Draft <br>
 
 {{< callout type="info" >}}
-**Request for comments**: If you have questions, comments or suggestions to this design, please share with the community and join the discussion.
+**Request for comments**: If you have questions, comments or suggestions on this design, please share with the community and join the discussion.
 <br>
 **Discussion forum** for this design document can be found here: [https://github.com/orgs/openrelik/discussions/5](https://github.com/orgs/openrelik/discussions/5)
-
-
 {{< /callout >}}
 
 ### Objective
