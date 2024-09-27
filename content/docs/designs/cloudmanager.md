@@ -25,13 +25,13 @@ The proposed architecture of the Cloud Manager service.
 
 A workflow demonstrating using a cloud disk between an OpenRelik Worker (*Worker*) and the OpenRelik CloudManager (*CM*) would work as follows:
 
-1. W asks *CM* to make disk available (eg a GCE disk test) through an API call  
+1. *Worker* asks *CM* to make disk available (eg a GCE disk test) through an API call  
 2. *CM* uses cloud vendor tools to mount the disk as a block device on the *CM* machine  
-   1. If the disk is already available it will lookup the disk to NBD port mapping.  
+   * If the disk is already available it will lookup the disk to NBD port mapping.  
 3. *CM* provides *Worker* with a tcp port on which it can NBD mount the remote block device  
 4. *Worker* NBD mounts the remote block device locally as /dev/nbd0 using native linux nbd kernel support  
 5. *Worker* processes the disk as if it is a normal block device  
-6. When *Worker* is done it calls the umount API on the *CM*  
+6. When *Worker* is done it calls the unmount API on the *CM*  
 7. *CM* will check if the disk is used by any other *Worker* and unmount the disk using vendor cloud tools if it is not used anymore.
 
 [![imagen](/cloudmanager.png)](/cloudmanager.png)
@@ -43,12 +43,14 @@ As the cloud disk is mounted not directly on the OpenRelik Worker but mounted on
 Conclusion: It seems the overhead of the NBD protocol is not limiting the read speed. The read speed seems to be only limited by the [GCE machine persistent disk limits](https://cloud.google.com/compute/docs/disks/performance#machine-type-disk-limits) per machine type. Advice would be to make the OpenRelik CloudManager a GCE machine type with lots of vCPUs and RAM to maximize disk read throughput.
 
 ### Test software  
-Gcloud  
-gcloud compute instances attach-disk instance-test \--disk test-disk \--zone us-central1-b \--device-name=mydisk  
-NBD server   
-/usr/bin/qemu-nbd \--port=12345 \--shared=100 \-t \--pid-file=nbd.pid \-f raw /dev/disk/by-id/google-mydisk  
-NBD client  
-/sbin/nbd-client localhost 12345 /dev/nbd0
+#### Gcloud
+`gcloud compute instances attach-disk instance-test \--disk test-disk \--zone us-central1-b \--device-name=mydisk`
+
+#### NBD server
+`/usr/bin/qemu-nbd \--port=12345 \--shared=100 \-t \--pid-file=nbd.pid \-f raw /dev/disk/by-id/google-mydisk` 
+
+#### NBD client
+`/sbin/nbd-client [nbd-server] 12345 /dev/nbd0`
 
 #### Test\#1
 
@@ -57,13 +59,13 @@ Configuration:
 * 2 GCE machines (e2-micro (2 vCPUs, 1 GB memory))  
 * GCE test-disk \-\> 10GB Debian buster balanced persistent disk
 
-Test direct \-\> ‘dd | pv’ directly on machine where GCE disk is attached 
+Test direct \-\> `dd | pv` directly on machine where GCE disk is attached 
 
 * dd on machine \-\> GCE disk   
 * $ sudo dd if=/dev/disk/by-id/google-test-disk|pv |dd of=/dev/null  
 * Average of 14.4 MB/sec
 
-Test NBD \-\> ‘dd | pv’ from machine where GCE disk is NBD attached through machine
+Test NBD \-\> `dd | pv` from machine where GCE disk is NBD attached through machine
 
 * dd on nbd-client machine2 /dev/nbd0 \-\> NBD proto \-\>  machine2 \-\> GCE attached disk  
 * $ sudo dd if=/dev/nbd0|pv |dd of=/dev/null  
