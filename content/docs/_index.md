@@ -18,7 +18,7 @@ OpenRelik is a powerful, open-source platform designed to streamline and enhance
 {{< cards >}}
     {{< card link="getting-started" title="Getting started" icon="star" >}}
     {{< card link="key-concepts" title="Key concepts" icon="key" >}}
-    {{< card link="architecture" title="Archtecture" icon="information-circle" >}}
+    {{< card link="architecture" title="Architecture" icon="information-circle" >}}
     {{< card link="workflows" title="Workflows" icon="play" >}}
 {{< /cards >}}
 
