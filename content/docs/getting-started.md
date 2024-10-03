@@ -49,12 +49,12 @@ https://developers.google.com/workspace/guides/create-credentials#oauth-client-i
 
 Steps:
 1. Create a new GCP project, or use an existing one
-2. Navigate to "APIs & Servides > Credentials"
+2. Navigate to "APIs & Services > Credentials"
 3. Click "+ CREATE CREDENTIALS" > OAuth client ID
 4. Select"Web application" as the Application type
 5. Name it "OpenRelik Localhost" or to whatever you want (it doesn't matter)
 6. In "Authorized redirect URIs" click "+ ADD URI"
-7. Enter "http://localhost:8000/auth"
+7. Enter "http://localhost:8710/auth"
 8. Click "SAVE"
 
 On the right you will have details for your new credentials. The important ones are:
