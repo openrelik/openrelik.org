@@ -61,10 +61,10 @@ Conclusion: It seems the overhead of the NBD protocol is not limiting the read s
 
 ### Test software
 #### Gcloud
-`gcloud compute instances attach-disk instance-test \--disk test-disk \--zone us-central1-b \--device-name=mydisk`
+`gcloud compute instances attach-disk instance-test --disk test-disk --zone us-central1-b --device-name=mydisk`
 
 #### NBD server
-`/usr/bin/qemu-nbd \--port=12345 \--shared=100 \-t \--pid-file=nbd.pid \-f raw /dev/disk/by-id/google-mydisk`
+`/usr/bin/qemu-nbd --port=12345 --shared=100 -t --pid-file=nbd.pid -f raw /dev/disk/by-id/google-mydisk`
 
 #### NBD client
 `/sbin/nbd-client [nbd-server] 12345 /dev/nbd0`
