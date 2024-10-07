@@ -28,7 +28,7 @@ curl -s -O https://raw.githubusercontent.com/openrelik/openrelik-deploy/main/doc
 You can choose to host the OpenRelik data directory anywhere but note that by default it will host Artifacts and PostgreSQL data in this directory so make sure you have enough disk space available.
 
 ```shell
-cd <DIRECOTRY OF YOUR CHOICE>
+cd <DIRECTORY OF YOUR CHOICE>
 ```
 
 #### Run install script
