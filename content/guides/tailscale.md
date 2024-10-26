@@ -7,6 +7,8 @@ draft = false
 
 This guide outlines the process of integrating your OpenRelik server with Tailscale, allowing secure access to your server from anywhere on your Tailscale network.
 
+Reference: Official Tailscale guide for using Tailscale with Docker: https://tailscale.com/kb/1282/docker
+
 **Prerequisites:**
 
 * An installed and functioning OpenRelik server.
