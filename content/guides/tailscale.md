@@ -1,5 +1,5 @@
 +++
-title = 'Serving OpenRelik with Tailscale'
+title = 'OpenRelik with Tailscale'
 linkTitle = 'Tailscale'
 date = 2024-10-26T21:53:59+02:00
 draft = false
