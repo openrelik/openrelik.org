@@ -49,6 +49,11 @@ menu:
       name: Guides
       pageRef: /guides
       weight: 2
+    - identifier: changelog
+      name: Changelog
+      pageRef: /changelog
+      weight: 3
+
     #- identifier: showcase
     #  name: Showcase
     #  pageRef: /showcase
