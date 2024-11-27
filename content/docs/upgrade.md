@@ -1,8 +1,18 @@
 +++
 title = 'Upgrade'
-date = 2024-09-23T12:24:50+02:00
+date = 2024-11-27
 draft = false
 +++
+
+{{< callout type="warning" >}}
+**Important**
+
+If you are upgrading from a version prior to **2024.11.27** you need to take an extra step to apply
+file and folder permissions with the new RBAC permission system.
+```
+docker compose exec openrelik-server python admin.py fix-ownership
+```
+{{< /callout >}}
 
 ### 1. Change version for docker containers
 In your openrelik directory, edit config.env and change version for:
@@ -18,8 +28,8 @@ In your openrelik directory, edit config.env and change version for:
 * OPENRELIK_WORKER_TIMESKETCH_VERSION=<CHANGE_VERSION>
 * OPENRELIK_WORKER_HAYABUSA_VERSION=<CHANGE_VERSION>
 
-For example, if you are upgrading to version 2024.09.23
-* OPENRELIK_SERVER_VERSION=2024.09.23
+For example, if you are upgrading to version 2024.11.27
+* OPENRELIK_SERVER_VERSION=2024.11.27
 * ...
 
 ### 2. Restart the system
