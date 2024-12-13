@@ -7,6 +7,12 @@ draft = false
 
 This document proposes a transition from the current calendar versioning (CalVer) scheme to Semantic Versioning (SemVer) for the OpenRelik project. This change addresses limitations of the current scheme in managing dependencies and communicating changes between project components. This proposal details the motivation, implementation, and impact of this transition.
 
+{{< callout type="info" >}}
+**Request for comments**: If you have questions, comments or suggestions on this design, please share with the community and join the discussion.
+<br>
+**Discussion forum** for this design document can be found here: [https://github.com/orgs/openrelik/discussions/16](https://github.com/orgs/openrelik/discussions/16)
+{{< /callout >}}
+
 **2. Current State**
 
 The OpenRelik project currently employs CalVer. Releases are identified by a date-based identifier (YYYY.MM.DD). This approach offers temporal context but fails to express the nature and scope of changes between releases. This lack of semantic information complicates dependency management, particularly between the `openrelik-server`, `openrelik-ui`, `openrelik-worker-common`, and various worker repositories (e.g., `openrelik-worker-example1`).
