@@ -9,7 +9,10 @@ weight = 5
 This documentation provides an overview to the RESTful API endpoints that power the digital forensics platform. This API allows you to interact with the platform programmatically, enabling automation and integration with your existing tools and workflows. Full API documentation is provided when installing the server.
 
 {{< callout type="info" >}}
-The complete (auto-generated) documentation can be found at http://<OPENRELIK_SERVER_HOSTNAME>/docs
+If you want to access the API server and the generated documentation:
+```shell
+http://localhost:8710/api/v1/docs/
+```
 {{< /callout >}}
 
 ### Key Concepts
