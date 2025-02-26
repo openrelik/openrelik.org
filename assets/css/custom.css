@@ -1,3 +1,48 @@
 .nav-container-off {
     display: none;
 }
+
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.card {
+    flex-basis: 300px;
+    margin: 10px 20px 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+  }
+
+.card:hover {
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #c1c1c1;
+}
+
+  .card-content {
+    padding: 15px;
+  }
+
+  .card-title {
+    margin-top: 0;
+  }
+
+  .card-footer {
+    padding: 10px;
+  }
+
+  .community-label {
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: #fcfcfc;
+    border:1px solid #cecece;
+    color: #000000;
+    border-radius: 20px;
+    font-size: 0.7em;
+    margin-top: 10px;
+  }
+
+

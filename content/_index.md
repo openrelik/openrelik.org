@@ -2,6 +2,7 @@
 date = 2024-08-14T08:22:22+02:00
 draft = false
 toc = false
+width = "full"
 +++
 
 <div class="hx-mt-6 hx-mb-6">
@@ -16,12 +17,11 @@ OpenRelik is an open-source (Apache-2.0) platform designed to streamline collabo
 {{< /hextra/hero-subtitle >}}
 </div>
 
-{{< cards >}}
-    {{< card link="docs/key-concepts" title="Key concepts" icon="key" >}}
-    {{< card link="docs/getting-started" title="Getting started" icon="star" >}}
-    {{< card link="docs/designs/openrelik" title="Design document" icon="information-circle" >}}
-    {{< card link="https://github.com/openrelik/" title="Code" icon="github" >}}
-{{< /cards >}}
+{{<cards>}}
+{{<card link="docs/key-concepts" title="Key concepts" icon="key" >}}
+{{<card link="docs/getting-started" title="Getting started" icon="star" >}}
+{{<card link="docs/designs/openrelik" title="Design document" icon="information-circle" >}}
+{{<card link="https://github.com/openrelik/" title="Code" icon="github" >}}
+{{</cards>}}
 
 {{< figure src="screenshot-frontpage.png">}}
-

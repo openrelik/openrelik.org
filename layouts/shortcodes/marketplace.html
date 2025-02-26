@@ -1,0 +1,15 @@
+<div class="card-grid">
+  {{ range site.Data.marketplace.items }}
+    <div class="card">
+      <div class="card-content">
+        <h3 class="card-title">{{ .display_name }}</h3>
+        <small>Maintainer: <strong>The OpenRelik team</strong></small>
+        <div class="card-body" style="margin-top:10px">
+          {{ .description }}
+        </div>
+        <br>
+        <a href="{{ .url }}">Read More</a>
+      </div>
+    </div>
+  {{ end }}
+</div>
