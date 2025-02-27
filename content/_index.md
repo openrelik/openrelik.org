@@ -1,5 +1,5 @@
 +++
-date = 2024-08-14T08:22:22+02:00
+date = 2025-02-26
 draft = false
 toc = false
 width = "full"
@@ -7,7 +7,7 @@ width = "full"
 
 <div class="hx-mt-6 hx-mb-6">
 {{< hextra/hero-headline >}}
-  <img src="/logo.png" width="50" alt="OpenRelik Logo" style="display: inline; margin-top:-7px; margin-right: 10px">OpenRelik
+  <img src="/logo-light-round.png" width="50" alt="OpenRelik Logo" style="display: inline; margin-top:-7px; margin-right: 10px">OpenRelik
 {{< /hextra/hero-headline >}}
 </div>
 
@@ -17,11 +17,13 @@ OpenRelik is an open-source (Apache-2.0) platform designed to streamline collabo
 {{< /hextra/hero-subtitle >}}
 </div>
 
-{{<cards>}}
-{{<card link="docs/key-concepts" title="Key concepts" icon="key" >}}
-{{<card link="docs/getting-started" title="Getting started" icon="star" >}}
-{{<card link="docs/designs/openrelik" title="Design document" icon="information-circle" >}}
-{{<card link="https://github.com/openrelik/" title="Code" icon="github" >}}
-{{</cards>}}
+{{< cards >}}
+{{< card link="docs/getting-started" title="Getting started" icon="star" >}}
+{{< card link="docs/key-concepts" title="Key concepts" icon="key" >}}
+{{< card link="docs/designs/openrelik" title="Design document" icon="information-circle" >}}
+{{< card link="https://github.com/openrelik/" title="Code" icon="github" >}}
+{{< /cards >}}
 
+<div style="border:1px solid #e4e4e4; border-radius:12px; margin-top:20px;">
 {{< figure src="screenshot-frontpage.png">}}
+</div>

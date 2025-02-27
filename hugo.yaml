@@ -92,21 +92,20 @@ params:
     displayTitle: true
     displayLogo: true
     logo:
-      path: logo.png
-      dark: logo-dark.png
+      path: logo-light-round.png
       width: 30
       height: 30
       link: /
-    width: wide
+    width: full
 
   page:
     # full (100%), wide (90rem), normal (1280px)
-    width: normal
+    width: full
 
   theme:
     # light | dark | system
     default: light
-    displayToggle: true
+    displayToggle: false
 
   footer:
     enable: false
