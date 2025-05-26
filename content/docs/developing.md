@@ -111,6 +111,35 @@ You can bring down the complete stack with
 tilt down
 ```
 
+## Administrative Tasks with admin.py
+
+OpenRelik includes an admin.py script for performing various administrative tasks directly against the backend, such as creating users, listing users, or other management functions. 
+
+This script is particularly useful for initial setup or when direct database manipulation is needed, for instance, if the initial admin credentials from install.sh were missed. 
+
+### Accessing admin.py
+
+The admin.py script is located within the openrelik-server container (or openrelik-api depending on your setup – typically the container running the FastAPI application). 
+
+To use it, you first need to execute a shell session inside this running container: 
+```bash 
+# Ensure your OpenRelik stack is running (e.g., via 'tilt up' or 'docker compose up') 
+# Replace 'openrelik-server' if your API container has a different name (e.g., openrelik-api) 
+docker exec -it openrelik-server /bin/bash 
+```
+
+### Using admin.py
+
+Once you are inside the container's shell, you can run the admin.py script.
+
+
+```bash
+python admin.py --help
+# Inside the openrelik-server container python admin.py --help 
+# To see available commands and options +python admin.py create-user --username newadmin --password yoursecurepassword --is-admin 
+# Example + + +Refer to the script's help output (python admin.py --help or python admin.py <command> --help) for detailed usage instructions for each available command. 
+```
+
 ## Running Unit Tests
 
 At the moment, only some workers do have unit tests. To run them go into the worker and run:
