@@ -5,6 +5,7 @@ title: "OpenRelik"
 enableRobotsTXT: true
 enableGitInfo: false
 enableEmoji: false
+enableInlineShortcodes: true
 hasCJKLanguage: false
 
 services:
@@ -37,8 +38,6 @@ markup:
   highlight:
     noClasses: false
 
-enableInlineShortcodes: true
-
 menu:
   main:
     - identifier: documentation
@@ -54,10 +53,11 @@ menu:
       pageRef: /changelog
       weight: 3
 
-    #- identifier: showcase
-    #  name: Showcase
-    #  pageRef: /showcase
-    #  weight: 2
+    - identifier: marketplace
+      name: Marketplace
+      pageRef: /marketplace
+      weight: 4
+
     #- identifier: blog
     #  name: Blog
     #  pageRef: /blog
@@ -66,10 +66,10 @@ menu:
     #  name: About
     #  pageRef: /about
     #  weight: 4
-    #- name: Search
-    #  weight: 5
-    #  params:
-    #    type: search
+    - name: Search
+      weight: 5
+      params:
+        type: search
     - name: GitHub
       weight: 6
       url: "https://github.com/openrelik/"
@@ -143,21 +143,8 @@ params:
   highlight:
     copy:
       enable: true
-      # hover | always
       display: hover
 
   comments:
     enable: false
-    type: giscus
-    # https://giscus.app/
-    giscus:
-      repo: imfing/hextra
-      repoId: R_kgDOJ9fJag
-      category: General
-      categoryId: DIC_kwDOJ9fJas4CY7gW
-      # mapping: pathname
-      # strict: 0
-      # reactionsEnabled: 1
-      # emitMetadata: 0
-      # inputPosition: top
-      # lang: en
+

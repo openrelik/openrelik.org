@@ -2,6 +2,7 @@
 date = 2025-02-26
 draft = false
 toc = false
+width = "full"
 +++
 
 <div class="hx-mt-6 hx-mb-6">
