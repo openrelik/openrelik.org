@@ -190,18 +190,18 @@ ports:
 ## Contributing to OpenRelik
 
 We welcome contributions! Please see:
-
-[https://github.com/google/.github/blob/master/CONTRIBUTING.md](Contributing)
+ 
+[Contributing](https://github.com/google/.github/blob/master/CONTRIBUTING.md)
 
 ### Finding Issues
 
 * If you find any issues, please raise an issues in the relevant repository (e.g. specific to a worker vs. server) with as much details as possible.
-* More general feature discussions: [https://github.com/orgs/openrelik/discussions](Github OpenRelik discussions)
+* More general feature discussions: [Github OpenRelik discussions](https://github.com/orgs/openrelik/discussions)
 
 ## Useful Resources
 
 - **Project Website:** [Link to OpenRelik website](https://openrelik.org/)
-- **How to create a new Worker:** [https://openrelik.org/guides/create-a-new-worker/](Create a new worker)
+- **How to create a new Worker:** [Create a new worker](https://openrelik.org/guides/create-a-new-worker/)
 
 ## FAQ
 
