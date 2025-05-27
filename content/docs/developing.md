@@ -99,6 +99,69 @@ If you are deveolping on a remote sysystem, you might want to follow the followi
 ssh -L 10350:localhost:10350 -L 8710:localhost:8710 -L 8711:localhost:8711 yourmachine.local
 ```
 
+### Developing the Server with Hot Reloading
+
+To speed up server-side development, you can configure the OpenRelik server (which typically uses `uvicorn`) to automatically reload when you make code changes. This avoids manual restarts and provides a faster feedback loop.
+
+1.  **Locate your `docker-compose.yml` file:** This file is usually in the root of your `openrelik-deploy/docker/` directory or a similar location where your OpenRelik stack is defined.
+2.  **Modify the server's command:** Find the service definition for the OpenRelik server (often named `openrelik-server` or `api`). You'll need to add the `--reload` and `--reload-dir` flags to the `uvicorn` command.
+
+    For example, if the original command is:
+    ```yaml
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    ```
+
+    Change it to:
+    ```yaml
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload --reload-dir /app/openrelik/
+    ```
+
+    *   **`--reload`**: Tells `uvicorn` to watch for code changes and restart the server automatically.
+    *   **`--reload-dir /app/openrelik/`**: Specifies the directory *inside the container* where your server's source code is mounted and should be monitored for changes. Adjust this path if your project structure is different.
+
+
+3. **Create and adjust a Tiltfile** You need to change the TILTfile in `openrelik-src/oprenrelik-server/docker-compose.yml`: 
+
+```version_settings(constraint=">=0.22.1")
+
+docker_compose("../openrelik/docker-compose.yml")
+
+docker_build(
+    # Image name - must match the image in the docker-compose file
+    "ghcr.io/openrelik/openrelik-server",
+    # Docker context
+    ".",
+    live_update=[
+        # Sync local files into the container.
+        sync("./src", "/openrelik/src"),
+        # Restart the process to pick up the changed files.
+        restart_container(),
+    ],
+)
+```
+
+4.  **Restart your services:** After saving the `docker-compose.yml` file, restart your services (e.g., using `tilt up` if you're using Tilt).
+
+```bash
+cd openrelik-src/openrelik-server/
+tilt up
+```
+
+Now, when you save changes to your Python files within the specified `--reload-dir`, `uvicorn` will automatically restart, applying your updates.
+
+You will see in the tilt output something like:
+
+```bash
+...
+openrelik-se… │ 1 File Changed: [src/admin.py]
+openrelik-se… │ Will copy 1 file(s) to container: [openrelik-server]
+openrelik-se… │ - '<FOLDER>/openrelik-src/openrelik-server/src/admin.py' --> '/app/openrelik/admin.py'
+openrelik-se… │ RUNNING: tar -C / -x -f -
+openrelik-se… │   → Container openrelik-server updated!
+openrelik-se… │ INFO:     Will watch for changes in these directories: ['/app/openrelik']
+...
+```
+
 ### Create a new worker
 
 Follow the guide [creating a new worker](../guides/create-a-new-worker.md).
