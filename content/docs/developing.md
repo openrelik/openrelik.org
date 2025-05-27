@@ -202,3 +202,19 @@ We welcome contributions! Please see:
 
 - **Project Website:** [Link to OpenRelik website](https://openrelik.org/)
 - **How to create a new Worker:** [https://openrelik.org/guides/create-a-new-worker/](Create a new worker)
+
+## FAQ
+
+*   **Why am I redirected to the login page after entering valid credentials?**
+
+    If you successfully log in but find yourself immediately redirected back to the login page, this often points to how your browser and the OpenRelik server are handling the session, specifically with regards to the hostname you're using (`localhost` vs. `127.0.0.1`).
+
+    **Common Reasons & Solution:**
+
+    *   **Cookie Domain/Origin Mismatch:** Web applications often set session cookies tied to a specific domain. If the cookie is set for `localhost`, your browser might not send it if you then access the application via `127.0.0.1` (or vice-versa), as they are technically treated as different origins. The server might also have security policies (like CORS or origin validation) that only recognize one of these hostnames.
+
+    *   **Try the Alternative:** The simplest solution is to try accessing the OpenRelik WebUI using the other address.
+        *   If you were using `http://127.0.0.1:8711`, try `http://localhost:8711`.
+        *   If you were using `http://localhost:8711`, try `http://127.0.0.1:8711`.
+
+    This usually resolves the issue by aligning the address you're using with how the server expects to manage your session.
