@@ -6,6 +6,11 @@ draft = false
 
 ### 0.6.0
 
+{{< callout type="info" >}}
+This release requires a database schema update. See here for instructions:
+https://openrelik.org/docs/upgrade/
+{{< /callout >}}
+
 **Server**
 
 This release includes updates to folder sharing, group management features in the admin CLI and API, improved documentation and type hints, dependency updates, file chat functionality, database connection handling in admin.py, optimized delete operations, task log file handling, a workflow name generation endpoint, and various bug fixes and performance improvements.
