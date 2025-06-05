@@ -1,8 +1,45 @@
 +++
 title = 'Changelog'
-date = 2025-02-26
+date = 2025-06-05
 draft = false
 +++
+
+### 0.6.0
+
+**Server**
+This release includes updates to folder sharing, group management features in the admin CLI and API, improved documentation and type hints, dependency updates, file chat functionality, database connection handling in admin.py, optimized delete operations, task log file handling, a workflow name generation endpoint, and various bug fixes and performance improvements.
+
+#### Highlights:
+
+- Added group management endpoints and commands to the admin CLI and API.
+- Updated folder sharing endpoint and related functionality.
+- Improved documentation and type hints.
+- Added file chat functionality.
+- Optimized delete and purge operations.
+- Added task log file handling (renamed from task_logs to task_files).
+- Added a workflow name generation endpoint.
+- Updated various dependencies, including h11 and setuptools.
+- Fixed a database connection issue in `admin.py`.
+- Added folder list endpoint.
+- Improved chunked file upload reliability and error handling.
+- Added task report feature.
+- Added Google OAuth token authentication support.
+
+**UI**
+This release includes improvements to file handling, UI updates, and new features like a task list dropdown and file chat component. Text file type detection is improved. Workflow name generation and folder icons have been added. Task reporting and search functionality are also included.
+
+#### Highlights:
+
+- Improved text file type detection.
+- Fixed minor typos.
+- RangeChart X-axis labels are now auto-formatted.
+- Added file chat component and improved file content display.
+- New task list dropdown implemented.
+- Workflow name generation and folder icons added.
+- Task report card implemented.
+- UI improvements and search feature added.
+- Improved file upload handling and configuration loading.
+- Improved error handling in the UI.
 
 ### 0.5.0
 
