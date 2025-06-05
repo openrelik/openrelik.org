@@ -1,0 +1,20 @@
+<div class="card-grid" style="min-width: 1000px;">
+  {{ range site.Data.marketplace.items }}
+    <div class="card">
+      <div class="card-content" style="display: flex; flex-direction: column; min-height: 100%;">
+        <h3 class="card-title">{{ .display_name }}</h3>
+        <small>Maintainer: <strong>{{ .owner }}</strong></small>
+        <div class="card-body" style="margin-top:10px; flex-grow: 1;">
+          {{ .description }}
+        </div>
+        <div style="margin-top: auto; margin-top: 20px;">
+          <small>
+          <b>Updated:</b> {{ .updated_at }}
+          <br>
+          <a href="{{ .url }}">{{ .repository }}</a>
+        </small>
+        </div>
+      </div>
+    </div>
+  {{ end }}
+</div>
