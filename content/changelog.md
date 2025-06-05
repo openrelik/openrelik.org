@@ -7,9 +7,10 @@ draft = false
 ### 0.6.0
 
 **Server**
+
 This release includes updates to folder sharing, group management features in the admin CLI and API, improved documentation and type hints, dependency updates, file chat functionality, database connection handling in admin.py, optimized delete operations, task log file handling, a workflow name generation endpoint, and various bug fixes and performance improvements.
 
-#### Highlights:
+Highlights:
 
 - Added group management endpoints and commands to the admin CLI and API.
 - Updated folder sharing endpoint and related functionality.
@@ -28,7 +29,7 @@ This release includes updates to folder sharing, group management features in th
 **UI**
 This release includes improvements to file handling, UI updates, and new features like a task list dropdown and file chat component. Text file type detection is improved. Workflow name generation and folder icons have been added. Task reporting and search functionality are also included.
 
-#### Highlights:
+Highlights:
 
 - Improved text file type detection.
 - Fixed minor typos.
