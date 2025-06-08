@@ -2,7 +2,7 @@
 title = 'Workflows'
 date = 2024-08-14T08:22:26+02:00
 draft = false
-weight = 3
+weight = 5
 +++
 
 [![imagen](/workflow.png)](/workflow.png)
@@ -17,8 +17,8 @@ Communication between containers and the core system is done through the Celery 
 
 Workflows offer two distinct execution modes:
 
-* **Pipelines:** Tasks are executed sequentially, with the output of one task serving as the input for the next. This is ideal for scenarios where a clear dependency exists between tasks.
-* **Parallel Groups:** Tasks within a group are executed concurrently, maximizing resource utilization and accelerating the overall workflow. This mode is well-suited for tasks that can operate independently.
+- **Pipelines:** Tasks are executed sequentially, with the output of one task serving as the input for the next. This is ideal for scenarios where a clear dependency exists between tasks.
+- **Parallel Groups:** Tasks within a group are executed concurrently, maximizing resource utilization and accelerating the overall workflow. This mode is well-suited for tasks that can operate independently.
 
 ### Intuitive Workflow Creation
 
