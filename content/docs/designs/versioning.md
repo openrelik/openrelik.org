@@ -1,8 +1,9 @@
 +++
-title = 'Design Proposal: Transition to Semantic Versioning'
+title = 'Semantic Versioning'
 linkTitle = 'Versioning'
 date = 2024-12-13T10:16:18+01:00
 draft = false
+weight = 3
 +++
 
 This document proposes a transition from the current calendar versioning (CalVer) scheme to Semantic Versioning (SemVer) for the OpenRelik project. This change addresses limitations of the current scheme in managing dependencies and communicating changes between project components. This proposal details the motivation, implementation, and impact of this transition.
@@ -21,17 +22,17 @@ The OpenRelik project currently employs CalVer. Releases are identified by a dat
 
 CalVer lacks the granularity necessary to express compatibility between components. It does not differentiate between backward-compatible additions, bug fixes, and breaking changes. This absence of semantic information creates challenges:
 
-*   **Dependency Tracking:** Determining compatible component versions requires manual inspection of release notes.
-*   **Automated Deployment:** Automated deployment pipelines cannot reliably determine compatible versions based on the version identifier.
-*   **Communication of Change Impact:** Users lack a concise method to understand the impact of upgrading to a new version.
+- **Dependency Tracking:** Determining compatible component versions requires manual inspection of release notes.
+- **Automated Deployment:** Automated deployment pipelines cannot reliably determine compatible versions based on the version identifier.
+- **Communication of Change Impact:** Users lack a concise method to understand the impact of upgrading to a new version.
 
 **4. Proposed Solution: Semantic Versioning**
 
 This proposal advocates for adoption of SemVer 2.0.0. SemVer uses a three-part version number: MAJOR.MINOR.PATCH.
 
-*   **MAJOR:** Incremented for incompatible API changes.
-*   **MINOR:** Incremented for backward-compatible additions of functionality.
-*   **PATCH:** Incremented for backward-compatible bug fixes.
+- **MAJOR:** Incremented for incompatible API changes.
+- **MINOR:** Incremented for backward-compatible additions of functionality.
+- **PATCH:** Incremented for backward-compatible bug fixes.
 
 This scheme provides explicit information about the nature of changes. It facilitates automated dependency management and improves communication about release impact.
 
@@ -45,9 +46,9 @@ The initial release under SemVer will be 0.1.0 for all repositories. This signif
 
 Component dependencies will be expressed using version ranges. This allows for flexibility while ensuring compatibility. Examples:
 
-*   `^1.2.3`: Compatible with 1.2.3 and any subsequent 1.x.x releases, but not 2.0.0.
-*   `~1.2.3`: Compatible with 1.2.x releases, but not 1.3.0.
-*   `>=1.0.0 <2.0.0`: Compatible with 1.x.x releases.
+- `^1.2.3`: Compatible with 1.2.3 and any subsequent 1.x.x releases, but not 2.0.0.
+- `~1.2.3`: Compatible with 1.2.x releases, but not 1.3.0.
+- `>=1.0.0 <2.0.0`: Compatible with 1.x.x releases.
 
 **5.3 Compatibility Matrix:**
 
@@ -72,15 +73,15 @@ For significant API changes that cannot maintain backward compatibility, API ver
 
 **7.1 Positive Impacts:**
 
-*   Improved dependency management.
-*   Enhanced communication regarding release impact.
-*   Facilitation of automated deployments.
-*   Increased project maintainability.
+- Improved dependency management.
+- Enhanced communication regarding release impact.
+- Facilitation of automated deployments.
+- Increased project maintainability.
 
 **7.2 Negative Impacts:**
 
-*   Initial overhead for implementation and transition.
-*   Potential need for updates to existing integrations.
+- Initial overhead for implementation and transition.
+- Potential need for updates to existing integrations.
 
 **8. Conclusion**
 
