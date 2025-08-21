@@ -147,9 +147,13 @@ items:
   url: https://github.com/openrelik/openrelik-worker-extraction
   github_stars: 1
 - display_name: AmCache-EvilHunter
-  description: OpenRelik worker that runs AmCache-EvilHunter to parse Windows Amcache.hve.
-  tools: []
-  repository: openrelik/openrelik-worker-extraction
+  description: Runs AmCache-EvilHunter to parse Windows Amcache.hve.
+  tools:
+  - display_name: AmCache-EvilHunter
+    description: parse and analyze Windows Amcache.hve registry hives, identify evidence of execution, suspicious executables, 
+      and integrate VirusTotal/OpenTIP lookups for enhanced threat intelligence.
+    url: https://github.com/cristianzsh/amcache-evilhunter
+  repository: FreeDurok/openrelik-worker-amcache-evilhunter
   license: MIT License
   owner: FreeDurok
   updated_at: '2025-08-21'
