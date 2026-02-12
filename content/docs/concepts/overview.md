@@ -1,8 +1,8 @@
 +++
-title = 'Key concepts'
-date = 2024-08-14T08:22:26+02:00
+title = 'Overview'
+date = 2026-02-12
 draft = false
-weight = 4
+weight = 1
 +++
 
 ### Forensic Artifacts

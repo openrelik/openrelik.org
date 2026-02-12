@@ -9,7 +9,7 @@ enableInlineShortcodes: true
 hasCJKLanguage: false
 
 services:
-   googleAnalytics:
+  googleAnalytics:
     ID: G-SCW4HC2P0N
 
 outputs:
@@ -44,34 +44,29 @@ menu:
       name: Documentation
       pageRef: /docs
       weight: 1
-    - identifier: guides
-      name: Guides
-      pageRef: /guides
-      weight: 2
+
     - identifier: changelog
       name: Changelog
       pageRef: /changelog
-      weight: 3
+      weight: 2
 
-    - identifier: marketplace
-      name: Marketplace
-      pageRef: /marketplace
-      weight: 4
+    - identifier: workerhub
+      name: Worker Hub
+      pageRef: /workerhub
+      weight: 3
 
     #- identifier: blog
     #  name: Blog
     #  pageRef: /blog
     #  weight: 3
-    #- identifier: about
-    #  name: About
-    #  pageRef: /about
-    #  weight: 4
+
     - name: Search
-      weight: 5
+      weight: 4
       params:
         type: search
+
     - name: GitHub
-      weight: 6
+      weight: 5
       url: "https://github.com/openrelik/"
       params:
         icon: github
@@ -105,7 +100,7 @@ params:
   theme:
     # light | dark | system
     default: light
-    displayToggle: false
+    displayToggle: true
 
   footer:
     enable: false
@@ -147,4 +142,3 @@ params:
 
   comments:
     enable: false
-

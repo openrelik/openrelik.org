@@ -1,5 +1,5 @@
 +++
-title = 'Install'
+title = 'Installation'
 date = 2025-06-08
 draft = false
 weight = 1
