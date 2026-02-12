@@ -165,12 +165,7 @@ def main(argv: list[str] | None = None) -> int:
         log.error("GitHub token required. Set GITHUB_TOKEN or pass --token.")
         return 1
 
-    try:
-        github = Github(auth=Auth.Token(args.token))
-        github.get_user().login  # verify auth
-    except GithubException as e:
-        log.error("GitHub authentication failed: %s", e)
-        return 1
+    github = Github(auth=Auth.Token(args.token))
 
     log.info("Searching GitHub for openrelik.yaml files...")
     items = search_github(github)
