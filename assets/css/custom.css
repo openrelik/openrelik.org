@@ -1,48 +1,56 @@
 .nav-container-off {
-    display: none;
+  display: none;
 }
 
 .card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .card {
-    flex-basis: 300px;
-    margin: 10px 20px 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: background-color 0.3s ease;
-  }
-
-.card:hover {
-    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid #c1c1c1;
+  flex-basis: 300px;
+  margin: 10px 20px 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
-  .card-content {
-    padding: 15px;
-  }
+.card:hover {
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #c1c1c1;
+}
 
-  .card-title {
-    margin-top: 0;
-  }
+.card-content {
+  padding: 15px;
+}
 
-  .card-footer {
-    padding: 10px;
-  }
+.card-title {
+  margin-top: 0;
+}
 
-  .community-label {
-    display: inline-block;
-    padding: 3px 8px;
-    background-color: #fcfcfc;
-    border:1px solid #cecece;
-    color: #000000;
-    border-radius: 20px;
-    font-size: 0.7em;
-    margin-top: 10px;
-  }
+.card-footer {
+  padding: 10px;
+}
 
+.community-label {
+  display: inline-block;
+  padding: 3px 8px;
+  background-color: #fcfcfc;
+  border: 1px solid #cecece;
+  color: #000000;
+  border-radius: 20px;
+  font-size: 0.7em;
+  margin-top: 10px;
+}
 
+/* Increase navbar title font size */
+span[title="OpenRelik"] {
+  font-size: 1.2rem !important;
+  font-weight: bold;
+}
+
+.content {
+  margin-top: 20px;
+}

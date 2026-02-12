@@ -1,15 +1,9 @@
 +++
-title = 'Development'
+title = 'Getting started'
 date = 2025-05-26
 draft = false
 weight = 3
 +++
-
-{{< callout type="info" >}}
-This development guide will help you install OpenRelik on your local machine for developing purposes.
-{{< /callout >}}
-
-# OpenRelik Development Guide
 
 Welcome to the OpenRelik development guide! This document provides instructions and best practices for contributing to the OpenRelik project.
 
@@ -163,11 +157,7 @@ openrelik-se… │ INFO:     Will watch for changes in these directories: ['/ap
 ...
 ```
 
-### Create a new worker
-
-Follow the guide [creating a new worker](../guides/create-a-new-worker.md).
-
-### Stop all stack down
+### Take the stack down
 
 You can bring down the complete stack with
 
@@ -261,11 +251,6 @@ We welcome contributions! Please see:
 - If you find any issues, please raise an issues in the relevant repository (e.g. specific to a worker vs. server) with as much details as possible.
 - More general feature discussions: [Github OpenRelik discussions](https://github.com/orgs/openrelik/discussions)
 
-## Useful Resources
-
-- **Project Website:** [Link to OpenRelik website](https://openrelik.org/)
-- **How to create a new Worker:** [Create a new worker](https://openrelik.org/guides/create-a-new-worker/)
-
 ## FAQ
 
 - **Why am I redirected to the login page after entering valid credentials?**
@@ -273,7 +258,6 @@ We welcome contributions! Please see:
   If you successfully log in but find yourself immediately redirected back to the login page, this often points to how your browser and the OpenRelik server are handling the session, specifically with regards to the hostname you're using (`localhost` vs. `127.0.0.1`).
 
   **Common Reasons & Solution:**
-
   - **Cookie Domain/Origin Mismatch:** Web applications often set session cookies tied to a specific domain. If the cookie is set for `localhost`, your browser might not send it if you then access the application via `127.0.0.1` (or vice-versa), as they are technically treated as different origins. The server might also have security policies (like CORS or origin validation) that only recognize one of these hostnames.
 
   - **Try the Alternative:** The simplest solution is to try accessing the OpenRelik WebUI using the other address.

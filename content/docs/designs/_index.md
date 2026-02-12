@@ -3,7 +3,7 @@ title = 'Design documents'
 date = 2024-09-24
 draft = false
 cascade = { type = "docs" }
-weight = 99
+weight = 6
 +++
 
 Technical design documents for the OpenRelik platform.
