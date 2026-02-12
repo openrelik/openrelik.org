@@ -1,115 +1,125 @@
 items:
+- display_name: Timesketch
+  description: Export Plaso and compatible CSV/JSON files to Timesketch.
+  tools:
   - display_name: Timesketch
-    description: Export Plaso and compatible CSV/JSON files to Timesketch.
-    tools:
-      - display_name: Timesketch
-        description: Collaborative timeline analysis tool
-        url: https://timesketch.org
-    repository: openrelik/openrelik-worker-timesketch
-    license: Apache License 2.0
-    owner: OpenRelik
-    updated_at: "2025-09-11"
-    url: https://github.com/openrelik/openrelik-worker-timesketch
-    github_stars: 10
-  - display_name: Strings
-    description: Extract strings from files.
-    tools: []
-    repository: openrelik/openrelik-worker-strings
-    license: Apache License 2.0
-    owner: OpenRelik
-    updated_at: "2026-02-02"
-    url: https://github.com/openrelik/openrelik-worker-strings
-    github_stars: 0
+    description: Collaborative timeline analysis tool
+    url: https://timesketch.org
+  repository: openrelik/openrelik-worker-timesketch
+  license: Apache License 2.0
+  owner: OpenRelik
+  updated_at: '2025-09-11'
+  url: https://github.com/openrelik/openrelik-worker-timesketch
+  github_stars: 10
+- display_name: AmCache-EvilHunter
+  description: Runs AmCache-EvilHunter to parse Windows Amcache.hve.
+  tools:
+  - display_name: AmCache-EvilHunter
+    description: parse and analyze Windows Amcache.hve registry hives, identify evidence
+      of execution, suspicious executables, and integrate VirusTotal/OpenTIP lookups
+      for enhanced threat intelligence.
+    url: https://github.com/cristianzsh/amcache-evilhunter
+  repository: FreeDurok/openrelik-worker-amcache-evilhunter
+  license: MIT License
+  owner: Durok
+  updated_at: '2025-09-11'
+  url: https://github.com/FreeDurok/openrelik-worker-amcache-evilhunter
+  github_stars: 2
+- display_name: Strings
+  description: Extract strings from files.
+  tools: []
+  repository: openrelik/openrelik-worker-strings
+  license: Apache License 2.0
+  owner: OpenRelik
+  updated_at: '2026-02-02'
+  url: https://github.com/openrelik/openrelik-worker-strings
+  github_stars: 0
+- display_name: Hayabusa
+  description: Windows event log fast forensics timeline generator and threat hunting
+    tool.
+  tools:
   - display_name: Hayabusa
-    description:
-      Windows event log fast forensics timeline generator and threat hunting
+    description: Windows event log fast forensics timeline generator and threat hunting
       tool.
-    tools:
-      - display_name: Hayabusa
-        description:
-          Windows event log fast forensics timeline generator and threat hunting
-          tool.
-        url: https://github.com/Yamato-Security/hayabusa
-    repository: openrelik-contrib/openrelik-worker-hayabusa
-    license: Apache License 2.0
-    owner: OpenRelik Contrib
-    updated_at: "2026-02-10"
-    url: https://github.com/openrelik-contrib/openrelik-worker-hayabusa
-    github_stars: 3
-  - display_name: Plaso
-    description: Create super timelines from disk images and other data sources.
-    tools: []
-    repository: openrelik/openrelik-worker-plaso
-    license: Apache License 2.0
-    owner: OpenRelik
-    updated_at: "2026-02-09"
-    url: https://github.com/openrelik/openrelik-worker-plaso
-    github_stars: 6
-  - display_name: dfIndexeddb
-    description:
-      Experimental Python tool for performing digital forensic analysis of
-      IndexedDB and LevelDB files.
-    tools: []
-    repository: openrelik/openrelik-worker-dfindexeddb
-    license: Apache License 2.0
-    owner: OpenRelik
-    updated_at: "2026-01-21"
-    url: https://github.com/openrelik/openrelik-worker-dfindexeddb
-    github_stars: 0
-  - display_name: File Extraction
-    description: Extract files from disk images and archive files.
-    tools: []
-    repository: openrelik/openrelik-worker-extraction
-    license: Apache License 2.0
-    owner: OpenRelik
-    updated_at: "2026-02-03"
-    url: https://github.com/openrelik/openrelik-worker-extraction
-    github_stars: 1
-  - display_name: Compute byte entropy for files.
-    description: Computes byte entropy, flags files with entropy over a certain threshold.
-    tools: []
-    repository: openrelik/openrelik-worker-entropy
-    license: Apache License 2.0
-    owner: OpenRelik
-    updated_at: "2025-06-06"
-    url: https://github.com/openrelik/openrelik-worker-entropy
-    github_stars: 0
-  - display_name: Grep
-    description: Grep based on supplied pattern.
-    tools: []
-    repository: openrelik/openrelik-worker-grep
-    license: Apache License 2.0
-    owner: OpenRelik
-    updated_at: "2026-02-07"
-    url: https://github.com/openrelik/openrelik-worker-grep
-    github_stars: 0
-  - display_name: LLM Prompter
-    description: Take any files that can be read as UTF-8 and run a prompt on it.
-    tools: []
-    repository: openrelik/openrelik-worker-llm
-    license: Apache License 2.0
-    owner: OpenRelik
-    updated_at: "2025-05-29"
-    url: https://github.com/openrelik/openrelik-worker-llm
-    github_stars: 0
-  - display_name: Chrome Credentials Analyser
-    description: Analyse stored Chrome Credentials
-    tools: []
-    repository: openrelik/openrelik-worker-chromecreds
-    license: N/A
-    owner: OpenRelik
-    updated_at: "2026-01-09"
-    url: https://github.com/openrelik/openrelik-worker-chromecreds
-    github_stars: 0
-  - display_name: Bulkextractor
-    description:
-      Extracts structured information such as email addresses, credit card
-      numbers, JPEGs and JSON snippets without parsing the file system or file system
-      structures.
-    tools: []
-    repository: openrelik/openrelik-worker-bulkextractor
-    license: N/A
-    owner: OpenRelik
-    updated_at: "2025-06-03"
-    url: https://github.com/openrelik/openrelik-worker-bulkextractor
-    github_stars: 0
+    url: https://github.com/Yamato-Security/hayabusa
+  repository: openrelik-contrib/openrelik-worker-hayabusa
+  license: Apache License 2.0
+  owner: OpenRelik Contrib
+  updated_at: '2026-02-10'
+  url: https://github.com/openrelik-contrib/openrelik-worker-hayabusa
+  github_stars: 3
+- display_name: Plaso
+  description: Create super timelines from disk images and other data sources.
+  tools: []
+  repository: openrelik/openrelik-worker-plaso
+  license: Apache License 2.0
+  owner: OpenRelik
+  updated_at: '2026-02-09'
+  url: https://github.com/openrelik/openrelik-worker-plaso
+  github_stars: 6
+- display_name: dfIndexeddb
+  description: Experimental Python tool for performing digital forensic analysis of
+    IndexedDB and LevelDB files.
+  tools: []
+  repository: openrelik/openrelik-worker-dfindexeddb
+  license: Apache License 2.0
+  owner: OpenRelik
+  updated_at: '2026-01-21'
+  url: https://github.com/openrelik/openrelik-worker-dfindexeddb
+  github_stars: 0
+- display_name: File Extraction
+  description: Extract files from disk images and archive files.
+  tools: []
+  repository: openrelik/openrelik-worker-extraction
+  license: Apache License 2.0
+  owner: OpenRelik
+  updated_at: '2026-02-03'
+  url: https://github.com/openrelik/openrelik-worker-extraction
+  github_stars: 1
+- display_name: Compute byte entropy for files.
+  description: Computes byte entropy, flags files with entropy over a certain threshold.
+  tools: []
+  repository: openrelik/openrelik-worker-entropy
+  license: Apache License 2.0
+  owner: OpenRelik
+  updated_at: '2025-06-06'
+  url: https://github.com/openrelik/openrelik-worker-entropy
+  github_stars: 0
+- display_name: Grep
+  description: Grep based on supplied pattern.
+  tools: []
+  repository: openrelik/openrelik-worker-grep
+  license: Apache License 2.0
+  owner: OpenRelik
+  updated_at: '2026-02-07'
+  url: https://github.com/openrelik/openrelik-worker-grep
+  github_stars: 0
+- display_name: LLM Prompter
+  description: Take any files that can be read as UTF-8 and run a prompt on it.
+  tools: []
+  repository: openrelik/openrelik-worker-llm
+  license: Apache License 2.0
+  owner: OpenRelik
+  updated_at: '2025-05-29'
+  url: https://github.com/openrelik/openrelik-worker-llm
+  github_stars: 0
+- display_name: Chrome Credentials Analyser
+  description: Analyse stored Chrome Credentials
+  tools: []
+  repository: openrelik/openrelik-worker-chromecreds
+  license: N/A
+  owner: OpenRelik
+  updated_at: '2026-01-09'
+  url: https://github.com/openrelik/openrelik-worker-chromecreds
+  github_stars: 0
+- display_name: Bulkextractor
+  description: Extracts structured information such as email addresses, credit card
+    numbers, JPEGs and JSON snippets without parsing the file system or file system
+    structures.
+  tools: []
+  repository: openrelik/openrelik-worker-bulkextractor
+  license: N/A
+  owner: OpenRelik
+  updated_at: '2025-06-03'
+  url: https://github.com/openrelik/openrelik-worker-bulkextractor
+  github_stars: 0
