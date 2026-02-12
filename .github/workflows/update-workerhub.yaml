@@ -26,7 +26,10 @@ jobs:
 
       - uses: peter-evans/create-pull-request@v7
         with:
+          committer: Johan Berggren <jberggren@gmail.com>
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: update-workerhub-data
+          delete-branch: true
           commit-message: "Update WorkerHub data"
           title: "Update WorkerHub data"
           body: |
