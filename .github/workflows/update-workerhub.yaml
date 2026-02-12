@@ -16,6 +16,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: false
 
       - name: Run workerhub scraper
         run: uv run scripts/workerhub.py --output data/workerhub.yaml
