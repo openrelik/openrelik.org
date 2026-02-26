@@ -1,0 +1,79 @@
+---
+import config from 'virtual:starlight/user-config';
+import Search from 'virtual:starlight/components/Search';
+import SiteTitle from 'virtual:starlight/components/SiteTitle';
+import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
+import { Icon } from '@astrojs/starlight/components';
+
+const shouldRenderSearch = config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+const { hasSidebar } = Astro.locals.starlightRoute;
+---
+
+
+
+<div class="header sl-flex">
+  <div class="title-wrapper sl-flex">
+    <SiteTitle />
+  </div>
+
+  <nav class="header-tabs sl-hidden md:sl-flex">
+    <a href="/docs/">Docs</a>
+    <a href="/workers/">Workers</a>
+    <a href="/changelog/">Changelog</a>
+  </nav>
+
+  <div class="sl-flex print:hidden right-side-items">
+    {shouldRenderSearch && <Search />}
+    <a href="https://github.com/openrelik/" target="_blank" class="md:sl-flex">
+        <Icon name="github" size="1.2rem" color='var(--sl-color-white)'/>
+    </a>
+    {hasSidebar && (
+        <div class="sl-hidden md:sl-flex right-group">
+            <ThemeSelect />
+        </div>
+    )}
+  </div>
+</div>
+
+<style>
+  .header {
+    gap: var(--sl-nav-gap);
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  /* Styling for your new tabs */
+  .header-tabs {
+    gap: 1.5rem;
+    font-weight: 500;
+    margin-left: 1rem;
+  }
+
+  .header-tabs a {
+    color: var(--sl-color-gray-2);
+    text-decoration: none;
+    font-size: var(--sl-text-sm);
+  }
+
+  .header-tabs a:hover {
+    color: var(--sl-color-white);
+  }
+
+  /* Keep the right side items grouped */
+  .right-side-items {
+    align-items: center;
+    gap: 1.5rem;
+    flex-grow: 0;
+  }
+
+  /* Re-apply your previous layout fixes */
+  @media (min-width: 50rem) {
+    .header {
+      display: flex !important; /* Use flex instead of Starlight's grid */
+    }
+    .right-side-items {
+      margin-inline-start: auto;
+    }
+  }
+</style>
