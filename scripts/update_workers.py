@@ -85,7 +85,6 @@ def build_item(file, yaml_content: dict) -> dict | None:
 
     repo_url = file.repository.html_url
     repo_display_name = file.repository.full_name
-    print(help(file.repository))
 
     if file.path != "openrelik.yaml":
         folder_path = os.path.dirname(file.path)
