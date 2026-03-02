@@ -36,6 +36,8 @@ from github import Auth, Github, GithubException
 
 log = logging.getLogger(__name__)
 
+unpublished_workers = set()
+
 
 def fetch_yaml_content(url: str) -> dict | None:
     """Download and parse a YAML file from a URL.
@@ -71,7 +73,7 @@ def build_item(file, yaml_content: dict) -> dict | None:
         A dict of item fields, or None if the item should be skipped.
     """
     if not yaml_content.get("publish", False):
-        log.debug("Skipping %s (publish=false)", file.repository.full_name)
+        unpublished_workers.add(file.repository.full_name)
         return None
 
     display_name = yaml_content.get("display_name", "N/A")
@@ -151,15 +153,16 @@ def fetch_community_workers(github: Github) -> list[dict]:
     Returns:
         List of worker item dicts.
     """
-    query = "filename:openrelik.yaml in:path language:yaml -repo:openrelik/openrelik-workers"
+    # 1. Search by filename across GitHub
+    query = "filename:openrelik.yaml -repo:openrelik/openrelik-workers"
     results = github.search_code(query=query)
 
     items = []
-    for file in results:
-        if file.path != "openrelik.yaml":
-            continue
+    processed_repos = set()
 
-        log.debug("Processing %s", file.repository.full_name)
+    for file in results:
+        repo_full_name = file.repository.full_name
+        log.debug("Found via code search: %s/%s", repo_full_name, file.path)
 
         yaml_content = fetch_yaml_content(file.download_url)
         if yaml_content is None:
@@ -168,6 +171,31 @@ def fetch_community_workers(github: Github) -> list[dict]:
         item = build_item(file, yaml_content)
         if item is not None:
             items.append(item)
+            processed_repos.add(repo_full_name)
+
+    # 2. Fallback: Search for repositories with 'openrelik-worker' in name
+    # This helps when code search indexing is delayed or misses files.
+    log.info("Running fallback repository search...")
+    repo_query = "openrelik-worker in:name"
+    repo_results = github.search_repositories(query=repo_query)
+
+    for repo in repo_results:
+        if repo.full_name in processed_repos or repo.owner.login.lower() == "openrelik":
+            continue
+
+        try:
+            # Check for openrelik.yaml in the root
+            yaml_file = repo.get_contents("openrelik.yaml")
+            yaml_content = fetch_yaml_content(yaml_file.download_url)
+            if yaml_content:
+                item = build_item(yaml_file, yaml_content)
+                if item:
+                    items.append(item)
+                    processed_repos.add(repo.full_name)
+        except GithubException:
+            # File not in root, skip for now as deeper search is expensive
+            log.debug("No openrelik.yaml in root of %s", repo.full_name)
+            continue
 
     return items
 
@@ -233,6 +261,10 @@ def main(argv: list[str] | None = None) -> int:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(output_json)
         log.info("Wrote %s", args.output)
+
+    log.info("Unpublished workers (skipped): %d", len(unpublished_workers))
+    for repo in sorted(unpublished_workers):
+        log.info("  %s", repo)
 
     return 0
 

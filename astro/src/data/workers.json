@@ -207,6 +207,87 @@
       "github_stars": 0
     },
     {
+      "display_name": "EvtxECmd Worker",
+      "description": "Runs EZTools EvtxECmd against evtx files",
+      "tools": [
+        {
+          "display_name": "EvtxECmd",
+          "description": "Event log (evtx) parser with standardized CSV, XML, and json output! Custom maps, locked file support, and more!",
+          "url": "https://github.com/EricZimmerman/evtx"
+        }
+      ],
+      "repository": "39dfir-bsg/openrelik-worker-evtxecmd",
+      "license": "Apache License 2.0",
+      "owner": "39dfir-bsg",
+      "updated_at": "2025-10-23",
+      "url": "https://github.com/39dfir-bsg/openrelik-worker-evtxecmd",
+      "github_stars": 0
+    },
+    {
+      "display_name": "EZTools Execution Worker",
+      "description": "Runs Eric Zimmerman's Tools (PECmd, LECmd, AmcacheParser and AppCompatCacheParser) against filetree consistent archives (like KAPE .zip images).",
+      "tools": [
+        {
+          "display_name": "PECmd",
+          "description": "Parses prefetch files.",
+          "url": "https://github.com/EricZimmerman/PECmdd"
+        },
+        {
+          "display_name": "LECmd",
+          "description": "Parses Lnk files.",
+          "url": "https://github.com/EricZimmerman/LECmd"
+        },
+        {
+          "display_name": "AmcacheParser",
+          "description": "Parses amcache hive, replays transaction logs based on file folder path.",
+          "url": "https://github.com/EricZimmerman/AmcacheParser"
+        },
+        {
+          "display_name": "AppCompatCacheParser",
+          "description": "Parses ShimCache in SYSTEM hive, replays transaction logs based on file folder path.",
+          "url": "https://github.com/EricZimmerman/AppCompatCacheParser"
+        }
+      ],
+      "repository": "39dfir-bsg/openrelik-worker-ezexecution",
+      "license": "Apache License 2.0",
+      "owner": "39dfir-bsg",
+      "updated_at": "2025-11-12",
+      "url": "https://github.com/39dfir-bsg/openrelik-worker-ezexecution",
+      "github_stars": 0
+    },
+    {
+      "display_name": "EZTools FileFolder Worker",
+      "description": "Runs Eric Zimmerman's Tools (RBCmd, JLECmd, SBECmd, RecentFileCacheParser) against filetree consistent archives (like KAPE .zip images).",
+      "tools": [
+        {
+          "display_name": "RBCmd",
+          "description": "Windows Recycle Bin artifact parser.",
+          "url": "https://github.com/EricZimmerman/RBCmd"
+        },
+        {
+          "display_name": "JLECmd",
+          "description": "Automatic and Custom Destinations jump list parser with Windows 10/11 support.",
+          "url": "https://github.com/EricZimmerman/JLECmd"
+        },
+        {
+          "display_name": "SBECmd",
+          "description": "ShellBags Explorer, command line edition, for exporting shellbag data.",
+          "url": "https://ericzimmerman.github.io/#!index.md"
+        },
+        {
+          "display_name": "RecentFileCacheParser",
+          "description": "Parses RecentFileCacheParser.bcf files.",
+          "url": "https://github.com/EricZimmerman/RecentFileCacheParser"
+        }
+      ],
+      "repository": "39dfir-bsg/openrelik-worker-ezfilefolder",
+      "license": "Apache License 2.0",
+      "owner": "39dfir-bsg",
+      "updated_at": "2025-10-28",
+      "url": "https://github.com/39dfir-bsg/openrelik-worker-ezfilefolder",
+      "github_stars": 0
+    },
+    {
       "display_name": "Hayabusa",
       "description": "Windows event log fast forensics timeline generator and threat hunting tool.",
       "tools": [
@@ -224,6 +305,51 @@
       "github_stars": 3
     },
     {
+      "display_name": "Hindsight",
+      "description": "Parses browser artifacts with Hindsight from a supplied ZIP archive and a provided profile browser path .",
+      "tools": [
+        {
+          "display_name": "Hindsight",
+          "description": "Hindsight is a free tool for analyzing chromium-based browser artifacts.",
+          "url": "https://github.com/obsidianforensics/hindsight"
+        }
+      ],
+      "repository": "AbdullahAlzeid/Openrelik-worker-hindsight",
+      "license": "Apache License 2.0",
+      "owner": "Abdullah Alzeid",
+      "updated_at": "2025-11-26",
+      "url": "https://github.com/AbdullahAlzeid/Openrelik-worker-hindsight",
+      "github_stars": 1
+    },
+    {
+      "display_name": "Kusto Ingest Worker",
+      "description": "Ingests CSV files into a Kusto cluster table using streaming.",
+      "tools": [],
+      "repository": "39dfir-bsg/openrelik-worker-kustoingest",
+      "license": "Apache License 2.0",
+      "owner": "39dfir-bsg",
+      "updated_at": "2025-11-12",
+      "url": "https://github.com/39dfir-bsg/openrelik-worker-kustoingest",
+      "github_stars": 0
+    },
+    {
+      "display_name": "MFTECmd Worker",
+      "description": "Runs EZTools MFTECmd against MFT files",
+      "tools": [
+        {
+          "display_name": "MFTECmd",
+          "description": "MFT parser with standardized CSV, XML, and json output! Custom maps, locked file support, and more!",
+          "url": "https://github.com/EricZimmerman/mft"
+        }
+      ],
+      "repository": "39dfir-bsg/openrelik-worker-mftecmd",
+      "license": "Apache License 2.0",
+      "owner": "39dfir-bsg",
+      "updated_at": "2025-11-06",
+      "url": "https://github.com/39dfir-bsg/openrelik-worker-mftecmd",
+      "github_stars": 0
+    },
+    {
       "display_name": "openrelik-worker-clamav",
       "description": "OpenRelik worker for malware scanning files and directories with ClamAV signatures.",
       "tools": [
@@ -238,6 +364,51 @@
       "owner": "Pabi",
       "updated_at": "2026-02-24",
       "url": "https://github.com/dig-sec/openrelik-worker-clamav",
+      "github_stars": 0
+    },
+    {
+      "display_name": "openrelik-worker-kstrike",
+      "description": "Worker for OpenRelik to add User Access Log parsing with Brian Moran's KStrike tool.",
+      "tools": [
+        {
+          "display_name": "KStrike",
+          "description": "Stand-alone parser for User Access Logging from Server 2012 and newer systems",
+          "url": "https://github.com/brimorlabs/KStrike"
+        }
+      ],
+      "repository": "kev365/openrelik-worker-kstrike",
+      "license": "Apache License 2.0",
+      "owner": "kev365",
+      "updated_at": "2025-08-02",
+      "url": "https://github.com/kev365/openrelik-worker-kstrike",
+      "github_stars": 0
+    },
+    {
+      "display_name": "RECmd Worker",
+      "description": "Runs Eric Zimmerman's RECmd application on Registry Hives in filetree consistent archives (like KAPE .zip images) using the DFIR Batch files",
+      "tools": [
+        {
+          "display_name": "RECmd",
+          "description": "Powerful command line Registry tool searching, multi-hive support, plugins, and more",
+          "url": "https://github.com/EricZimmerman/RECmd"
+        }
+      ],
+      "repository": "39dfir-bsg/openrelik-worker-recmd",
+      "license": "Apache License 2.0",
+      "owner": "39dfir-bsg",
+      "updated_at": "2025-10-24",
+      "url": "https://github.com/39dfir-bsg/openrelik-worker-recmd",
+      "github_stars": 0
+    },
+    {
+      "display_name": "Txt File to CSV Worker",
+      "description": "Smashes provided text format files together into one csv file",
+      "tools": [],
+      "repository": "39dfir-bsg/openrelik-worker-txtfiletocsv",
+      "license": "Apache License 2.0",
+      "owner": "39dfir-bsg",
+      "updated_at": "2025-11-11",
+      "url": "https://github.com/39dfir-bsg/openrelik-worker-txtfiletocsv",
       "github_stars": 0
     }
   ]
