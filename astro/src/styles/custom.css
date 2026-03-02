@@ -1,22 +1,49 @@
+/* Global */
+
 .header, .sidebar-pane, .right-sidebar {
   background-color: var(--sl-color-bg);
-  border: none !important;
-  backdrop-filter: none !important;
 }
 
+header {
+  border-bottom: 1px solid var(--sl-color-gray-6) !important;
+}
+
+.sidebar-pane {
+  border-right: 1px solid var(--sl-color-gray-6) !important;
+}
+
+/* Logo size */
 .site-title img {
   height: 30px !important;
   width: auto !important;
   max-height: none !important;
 }
 
+/* Logo gap */
 .site-title {
   gap: 0.8rem !important;
   font-size: 1.2rem !important;
   color: var(--sl-color-white) !important;
 }
 
-/* Force dark mode variables when the landing page is active */
+/* Remove vertical line divider */
+.social-icons::after {
+  content: none !important;
+  border-inline-end: none !important;
+}
+
+/* Remove pagination */
+.pagination-links {
+  display: none !important;
+}
+
+/* Remove top border from content */
+.content-panel {
+  border-top: none !important;
+}
+
+
+/* Pages with hero */
 html[data-has-hero] {
   --sl-color-white: hsl(0, 0%, 100%) !important;
   --sl-color-gray-1: hsl(224, 20%, 94%) !important;
@@ -26,7 +53,6 @@ html[data-has-hero] {
   --sl-color-text-accent: hsl(224, 100%, 85%);
   --sl-color-bg: var(--sl-color-black) !important;
   --sl-color-text: var(--sl-color-gray-2) !important;
-
 }
 
 /* Ensure background is dark regardless of the data-theme attribute */
@@ -35,7 +61,6 @@ html[data-has-hero] body {
   color: var(--sl-color-white) !important;
 }
 
-/* Target the hero container */
 html[data-has-hero] .hero {
   display: flex !important;
   flex-direction: column !important;
@@ -46,7 +71,6 @@ html[data-has-hero] .hero {
   padding-inline: 1.5rem !important;
 }
 
-/* Adjust the spacing between title and tagline if needed */
 html[data-has-hero] .hero .stack {
   gap: 1rem !important;
   align-items: center !important;
@@ -72,23 +96,18 @@ html[data-has-hero] site-search {
   display: none !important;
 }
 
-
 html[data-has-hero] .hero .copy {
   position: relative;
   width: 100%;
   align-items: center;
-
-  /* Updated "Nebula" Glow */
   background: radial-gradient(
-    50% 60% at 50% 50%,           /* Increased size to 90%/80%, moved up to 30% */
+    50% 60% at 50% 50%,
     rgba(50, 69, 255, 0.15) 0%,
     rgba(30, 50, 200, 0.05) 50%,
     transparent 100%
   );
 }
 
-
-/* Base setup */
 html[data-has-hero] body::before,
 html[data-has-hero] body::after {
   content: "";
@@ -102,7 +121,7 @@ html[data-has-hero] body::after {
   display: block !important;
 }
 
-/* Layer 1: Small stars - Drifting and Twinkling */
+/* Layer 1: Small stars */
 html[data-has-hero] body::before {
   background-image:
     radial-gradient(1px 1px at 25% 10%, #fff, transparent),
@@ -110,12 +129,11 @@ html[data-has-hero] body::before {
     radial-gradient(1px 1px at 15% 65%, #fff, transparent),
     radial-gradient(1px 1px at 85% 85%, #fff, transparent);
   background-size: 400px 400px;
-  /* Combined shorthand: Name Duration Timing Iteration */
   animation: twinkle 5s ease-in-out infinite, drift-slow 100s linear infinite;
   opacity: 0.3;
 }
 
-/* Layer 2: Larger stars - Drifting and Twinkling */
+/* Layer 2: Larger stars */
 html[data-has-hero] body::after {
   background-image:
     radial-gradient(2px 2px at 35% 20%, #fff, transparent),
@@ -126,13 +144,12 @@ html[data-has-hero] body::after {
   opacity: 0.5;
 }
 
-/* Twinkle only touches opacity */
+/* Star animations */
 @keyframes twinkle {
   0%, 100% { opacity: 0.2; }
   50% { opacity: 0.7; }
 }
 
-/* Drift only touches background-position */
 @keyframes drift-slow {
   from { background-position: 0 0; }
   to { background-position: 400px 400px; }
@@ -141,21 +158,4 @@ html[data-has-hero] body::after {
 @keyframes drift-fast {
   from { background-position: 0 0; }
   to { background-position: -600px 600px; }
-}
-
-
-/* 1. Remove the vertical line divider */
-.social-icons::after {
-  content: none !important;
-  border-inline-end: none !important;
-}
-
-/* Hide the pagination container globally */
-.pagination-links {
-  display: none !important;
-}
-
-/* Remove the horizontal border between content panels */
-.content-panel {
-  border-top: none !important;
 }

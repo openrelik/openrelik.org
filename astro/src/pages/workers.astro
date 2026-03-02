@@ -1,0 +1,147 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { Card, CardGrid, Badge } from "@astrojs/starlight/components";
+import data from "../data/workers.json";
+
+const { workers } = data;
+---
+
+<StarlightPage
+  frontmatter={{
+    title: "OpenRelik Workers",
+    template: "splash",
+    hero: {
+      tagline:
+        "Discover and integrate community-driven workers for your forensic investigations",
+    },
+  }}>
+
+  <div class="workers-grid-container">
+    <CardGrid>
+      {
+        workers.map((worker) => (
+          <Card title={worker.display_name}>
+            <div class="card-content">
+              <div class="owner-link">
+                <a href={worker.url} target="_blank" rel="noopener noreferrer">
+                  @{worker.owner}
+                </a>
+              </div>
+              <p>{worker.description}</p>
+              <div class="card-footer">
+                <div class="meta-info">
+                  {worker.owner !== "OpenRelik" ? (
+                    <>
+                      <Badge text="Community" variant="caution" />
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              </div>
+            </div>
+          </Card>
+        ))
+      }
+    </CardGrid>
+  </div>
+</StarlightPage>
+
+<style>
+  .workers-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .card-content p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 1.5rem;
+    color: var(--sl-color-gray-3);
+  }
+
+  .card-footer {
+    margin-top: auto;
+    padding-top: 0.5rem;
+  }
+
+  .meta-info {
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .owner-link {
+    margin-top: -1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  @media (max-width: 50rem) {
+    .owner-link {
+      margin-top: -0.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .owner-link a {
+    color: var(--sl-color-accent-high);
+    text-decoration: none;
+    font-size: var(--sl-text-xs);
+  }
+
+  .owner-link a:hover {
+    text-decoration: underline;
+  }
+
+  /* Force 3 columns on desktop and ensure same height */
+  @media (min-width: 50rem) {
+    :global(.card-grid) {
+      grid-template-columns: repeat(3, 1fr) !important;
+      align-items: stretch !important;
+    }
+  }
+
+  :global(.card) {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    border-radius: 8px !important;
+    border: 1px solid #283b60 !important;
+    background: linear-gradient(
+      to bottom,
+      #000000,
+      rgba(40, 59, 96, 0.2)
+    ) !important;
+    transition: background 0.2s ease-in-out !important;
+  }
+
+  /* Target the internal container of Starlight's Card */
+  :global(.card > .body),
+  :global(.card > .stack) {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  :global(.card:hover) {
+    background: linear-gradient(
+      to bottom,
+      #0a0a0a,
+      rgba(40, 59, 96, 0.35)
+    ) !important;
+  }
+</style>

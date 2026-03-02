@@ -1,15 +1,15 @@
 ---
-import config from 'virtual:starlight/user-config';
-import Search from 'virtual:starlight/components/Search';
-import SiteTitle from 'virtual:starlight/components/SiteTitle';
-import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
-import { Icon } from '@astrojs/starlight/components';
+import config from "virtual:starlight/user-config";
+import Search from "virtual:starlight/components/Search";
+import SiteTitle from "virtual:starlight/components/SiteTitle";
+import ThemeSelect from "virtual:starlight/components/ThemeSelect";
+import { Icon } from "@astrojs/starlight/components";
 
-const shouldRenderSearch = config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+const shouldRenderSearch =
+  config.pagefind ||
+  config.components.Search !== "@astrojs/starlight/components/Search.astro";
 const { hasSidebar } = Astro.locals.starlightRoute;
 ---
-
-
 
 <div class="header sl-flex">
   <div class="title-wrapper sl-flex">
@@ -25,13 +25,15 @@ const { hasSidebar } = Astro.locals.starlightRoute;
   <div class="sl-flex print:hidden right-side-items">
     {shouldRenderSearch && <Search />}
     <a href="https://github.com/openrelik/" target="_blank" class="md:sl-flex">
-        <Icon name="github" size="1.2rem" color='var(--sl-color-white)'/>
+      <Icon name="github" size="1.2rem" color="var(--sl-color-white)" />
     </a>
-    {hasSidebar && (
+    {
+      hasSidebar && (
         <div class="sl-hidden md:sl-flex right-group">
-            <ThemeSelect />
+          <ThemeSelect />
         </div>
-    )}
+      )
+    }
   </div>
 </div>
 

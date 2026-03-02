@@ -21,9 +21,10 @@
 # ]
 # ///
 
-"""Search GitHub for openrelik.yaml files and generate data/workerhub.yaml."""
+"""Search GitHub for openrelik.yaml files and generate data/workerhub.json."""
 
 import argparse
+import json
 import logging
 import os
 import sys
@@ -82,20 +83,67 @@ def build_item(file, yaml_content: dict) -> dict | None:
     if description.startswith("A brief description"):
         description = ""
 
+    repo_url = file.repository.html_url
+    repo_display_name = file.repository.full_name
+    print(help(file.repository))
+
+    if file.path != "openrelik.yaml":
+        folder_path = os.path.dirname(file.path)
+        repo_url = f"{repo_url}/tree/main/{folder_path}"
+        repo_display_name = f"{repo_display_name}/{folder_path}"
+
     return {
         "display_name": display_name,
         "description": description,
         "tools": yaml_content.get("tools", []),
-        "repository": file.repository.full_name,
+        "repository": repo_display_name,
         "license": file.repository.license.name if file.repository.license else "N/A",
-        "owner": file.repository.owner.name,
+        "owner": file.repository.owner.name or file.repository.owner.login,
         "updated_at": file.repository.updated_at.strftime("%Y-%m-%d"),
-        "url": file.repository.html_url,
+        "url": repo_url,
         "github_stars": file.repository.stargazers_count,
     }
 
 
-def search_github(github: Github) -> list[dict]:
+def fetch_core_workers(github: Github) -> list[dict]:
+    """Fetch workers from the openrelik-workers monorepo.
+
+    Args:
+        github: Authenticated PyGithub instance.
+
+    Returns:
+        List of worker item dicts.
+    """
+    items = []
+    repo_name = "openrelik/openrelik-workers"
+    base_path = "workers"
+
+    try:
+        repo = github.get_repo(repo_name)
+        contents = repo.get_contents(base_path)
+        for content_file in contents:
+            if content_file.type == "dir":
+                # Check for openrelik.yaml in this directory
+                yaml_path = f"{content_file.path}/openrelik.yaml"
+                try:
+                    yaml_path = f"{content_file.path}/openrelik.yaml"
+                    yaml_file = repo.get_contents(yaml_path)
+                    log.debug("Processing monorepo worker: %s", yaml_path)
+                    yaml_content = fetch_yaml_content(yaml_file.download_url)
+                    if yaml_content:
+                        item = build_item(yaml_file, yaml_content)
+                        if item:
+                            items.append(item)
+                except GithubException:
+                    log.debug("No openrelik.yaml in %s", content_file.path)
+                    continue
+    except GithubException as e:
+        log.error("Failed to fetch monorepo %s: %s", repo_name, e)
+
+    return items
+
+
+def fetch_community_workers(github: Github) -> list[dict]:
     """Search GitHub for openrelik.yaml files and return worker items.
 
     Args:
@@ -104,7 +152,7 @@ def search_github(github: Github) -> list[dict]:
     Returns:
         List of worker item dicts.
     """
-    query = "filename:openrelik.yaml in:path language:yaml"
+    query = "filename:openrelik.yaml in:path language:yaml -repo:openrelik/openrelik-workers"
     results = github.search_code(query=query)
 
     items = []
@@ -127,7 +175,7 @@ def search_github(github: Github) -> list[dict]:
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Search GitHub for openrelik.yaml and generate workerhub YAML data.",
+        description="Search GitHub for openrelik.yaml and generate workerhub JSON data.",
     )
     parser.add_argument(
         "--token",
@@ -137,13 +185,13 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("data/workerhub.yaml"),
-        help="Output file path (default: data/workerhub.yaml)",
+        default=Path("astro/src/data/workers.json"),
+        help="Output file path (default: astro/src/data/workers.json)",
     )
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="Print YAML to stdout instead of writing to file",
+        help="Print JSON to stdout instead of writing to file",
     )
     parser.add_argument(
         "--verbose",
@@ -167,17 +215,24 @@ def main(argv: list[str] | None = None) -> int:
 
     github = Github(auth=Auth.Token(args.token))
 
-    log.info("Searching GitHub for openrelik.yaml files...")
-    items = search_github(github)
-    log.info("Found %d published items", len(items))
+    log.info("Fetching core workers...")
+    items = fetch_core_workers(github)
+    log.info("Found %d items in monorepo", len(items))
 
-    output_yaml = yaml.dump({"items": items}, sort_keys=False)
+    log.info("Searching GitHub for community workers...")
+    items.extend(fetch_community_workers(github))
+    log.info("Found %d total published workers", len(items))
+
+    # Sort items: OpenRelik-owned first, then by display_name
+    items.sort(key=lambda x: (x["owner"] != "OpenRelik", x["display_name"].lower()))
+
+    output_json = json.dumps({"workers": items}, indent=2, ensure_ascii=False)
 
     if args.dry_run:
-        print(output_yaml)
+        print(output_json)
     else:
         args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(output_yaml)
+        args.output.write_text(output_json)
         log.info("Wrote %s", args.output)
 
     return 0

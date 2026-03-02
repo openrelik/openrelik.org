@@ -4,6 +4,7 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://openrelik.org",
   integrations: [
     starlight({
       title: "OpenRelik",
@@ -16,12 +17,16 @@ export default defineConfig({
           label: "Get Started",
           items: [
             { label: "Overview", slug: "docs" },
-            { label: "Installation", slug: "docs/install" },
+            { label: "Installation", slug: "docs/get-started/install" },
           ],
         },
         {
           label: "Guides",
-          autogenerate: { directory: "guides" },
+          autogenerate: { directory: "docs/guides" },
+        },
+        {
+          label: "Reference",
+          autogenerate: { directory: "docs/reference" },
         },
       ],
       components: {
@@ -30,4 +35,11 @@ export default defineConfig({
       customCss: ["./src/styles/custom.css"],
     }),
   ],
+  redirects: {
+    "/install.sh": {
+      status: 302,
+      destination:
+        "https://raw.githubusercontent.com/openrelik/openrelik-deploy/main/docker/install.sh",
+    },
+  },
 });
