@@ -1,0 +1,42 @@
+---
+title: 'Install OpenRelik'
+---
+
+### Prerequisites
+
+OpenRelik is distributed as Docker images. You can run the system on your own infrastructure or on a cloud provider using Kubernetes.
+By default the installation script will install OpenRelik on your local machine using Docker and Docker Compose.
+
+#### Install Docker Engine
+
+Follow the official installation instructions to [install Docker Engine](https://docs.docker.com/engine/install/) for your platform.
+
+### Start the installation
+
+We have created a helper script to get you started with all necessary configuration.
+You can inspect the script [here](https://openrelik.org/install.sh) before executing it.
+
+```bash
+curl -s -L -O https://openrelik.org/install.sh
+```
+
+#### Run install script
+
+Run the script, this will create a directory named `openrelik` in the current working directory.
+Everything that is needed is contained in this directory, including all stored artifacts so
+make sure you have enough disk space available.
+
+```bash
+bash install.sh
+```
+
+### Access the UI
+
+```
+http://localhost:8711/
+```
+
+### Next steps
+
+- [Configure Nginx](/docs/guides/nginx)
+- [Configure Google OAuth](/docs/guides/google-oauth)

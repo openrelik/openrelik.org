@@ -21,9 +21,10 @@
 # ]
 # ///
 
-"""Search GitHub for openrelik.yaml files and generate data/workerhub.yaml."""
+"""Search GitHub for openrelik.yaml files and generate data/workerhub.json."""
 
 import argparse
+import json
 import logging
 import os
 import sys
@@ -124,6 +125,7 @@ def fetch_core_workers(github: Github) -> list[dict]:
                 # Check for openrelik.yaml in this directory
                 yaml_path = f"{content_file.path}/openrelik.yaml"
                 try:
+                    yaml_path = f"{content_file.path}/openrelik.yaml"
                     yaml_file = repo.get_contents(yaml_path)
                     log.debug("Processing monorepo worker: %s", yaml_path)
                     yaml_content = fetch_yaml_content(yaml_file.download_url)
@@ -172,7 +174,7 @@ def fetch_community_workers(github: Github) -> list[dict]:
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Search GitHub for openrelik.yaml and generate workerhub YAML data.",
+        description="Search GitHub for openrelik.yaml and generate workerhub JSON data.",
     )
     parser.add_argument(
         "--token",
@@ -182,13 +184,13 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("data/workerhub.yaml"),
-        help="Output file path (default: data/workerhub.yaml)",
+        default=Path("astro/src/data/workers.json"),
+        help="Output file path (default: astro/src/data/workers.json)",
     )
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="Print YAML to stdout instead of writing to file",
+        help="Print JSON to stdout instead of writing to file",
     )
     parser.add_argument(
         "--verbose",
@@ -220,13 +222,16 @@ def main(argv: list[str] | None = None) -> int:
     items.extend(fetch_community_workers(github))
     log.info("Found %d total published workers", len(items))
 
-    output_yaml = yaml.dump({"items": items}, sort_keys=False)
+    # Sort items: OpenRelik-owned first, then by display_name
+    items.sort(key=lambda x: (x["owner"] != "OpenRelik", x["display_name"].lower()))
+
+    output_json = json.dumps({"workers": items}, indent=2, ensure_ascii=False)
 
     if args.dry_run:
-        print(output_yaml)
+        print(output_json)
     else:
         args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(output_yaml)
+        args.output.write_text(output_json)
         log.info("Wrote %s", args.output)
 
     return 0
