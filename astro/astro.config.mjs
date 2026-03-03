@@ -35,11 +35,4 @@ export default defineConfig({
       customCss: ["./src/styles/custom.css"],
     }),
   ],
-  redirects: {
-    "/install.sh": {
-      status: 302,
-      destination:
-        "https://raw.githubusercontent.com/openrelik/openrelik-deploy/main/docker/install.sh",
-    },
-  },
 });

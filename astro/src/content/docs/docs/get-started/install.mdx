@@ -14,10 +14,10 @@ Follow the official installation instructions to [install Docker Engine](https:/
 ### Start the installation
 
 We have created a helper script to get you started with all necessary configuration.
-You can inspect the script [here](https://openrelik.org/install.sh) before executing it.
+You can inspect the script [here](https://raw.githubusercontent.com/openrelik/openrelik-deploy/main/docker/install.sh) before executing it.
 
 ```bash
-curl -s -L -O https://openrelik.org/install.sh
+curl -s -O https://raw.githubusercontent.com/openrelik/openrelik-deploy/main/docker/install.sh
 ```
 
 #### Run install script
@@ -27,7 +27,8 @@ Everything that is needed is contained in this directory, including all stored a
 make sure you have enough disk space available.
 
 ```bash
-bash install.sh
+chmod 755 ./install.sh
+./install.sh
 ```
 
 ### Access the UI
