@@ -1,6 +1,27 @@
 ---
-title: 'Changelog'
+title: "Changelog"
 ---
+
+### 0.7.0
+
+This version improves the platform’s data management and analysis capabilities with configurable storage providers that support multiple read-write or read-only locations. New workflow "chord" support executes task groups followed by automated callback tasks, while workflow templates enable unique parameter customization and direct template-to-workflow association.
+
+For forensic analysis, OpenRelik now integrates DuckDB to provide SQL support for querying file based databases (e.g. SQLite). The update also introduces a Model Context Protocol (MCP) server to integrate OpenRelik tools directly into automated AI workflows. Additionally, the system improves observability through OpenTelemetry instrumentation, uses chunked file hashing for large datasets, and migrates file chat streaming to Server-Sent Events. More workers have been created that extends the capabilities of the platform.
+
+**Highlights**
+
+- Configurable storage providers with support for multiple read-write or read-only locations.
+- Workflow 'chord' support to execute task groups followed by callback tasks.
+- Workflow templates with unique parameter customization and template-to-workflow association.
+- MCP server for integration into automated workflows.
+- SQL analysis support using DuckDB for querying and schema retrieval of database files, with web UI support.
+- Migrated file chat streaming from WebSockets to Server-Sent Events (SSE).
+- Folder list pagination and optimized database queries.
+- OpenTelemetry instrumentation for FastAPI and Celery task tracing.
+- Support for soft-deletion of empty folders based on retention periods.
+- File hashing updated to use chunked reading, preventing memory issues with large files.
+- Dark theme updated to a slate-based palette.
+- Settings page to configure features for the web UI.
 
 ### 0.6.0
 
