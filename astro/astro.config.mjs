@@ -2,6 +2,8 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
+const googleAnalyticsId = "G-SCW4HC2P0N";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://openrelik.org",
@@ -33,6 +35,24 @@ export default defineConfig({
         Header: "./src/components/Header.astro",
       },
       customCss: ["./src/styles/custom.css"],
+      head: [
+        {
+          tag: "script",
+          attrs: {
+            src: `https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`,
+          },
+        },
+        {
+          tag: "script",
+          content: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${googleAnalyticsId}');
+          `,
+        },
+      ],
     }),
   ],
 });
