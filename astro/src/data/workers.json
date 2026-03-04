@@ -421,6 +421,17 @@
       "updated_at": "2025-11-11",
       "url": "https://github.com/39dfir-bsg/openrelik-worker-txtfiletocsv",
       "github_stars": 0
+    },
+    {
+      "display_name": "SFTP Upload",
+      "description": "Uploads provided files to a given path on an SFTP server. Can be used with SOF-ELK® for example.",
+      "tools": [],
+      "repository": "petersufliarsky/openrelik-worker-sftp",
+      "license": "MIT",
+      "owner": "PeterSufliarsky",
+      "updated_at": "2026-03-04",
+      "url": "https://github.com/PeterSufliarsky/openrelik-worker-sftp",
+      "github_stars": 0
     }
   ]
 }
