@@ -7,7 +7,7 @@
       "repository": "openrelik/openrelik-workers/workers/openrelik-worker-analyzer-logs",
       "license": "Apache License 2.0",
       "owner": "OpenRelik",
-      "updated_at": "2026-02-27",
+      "updated_at": "2026-03-06",
       "url": "https://github.com/openrelik/openrelik-workers/tree/main/workers/openrelik-worker-analyzer-logs",
       "github_stars": 1
     },
@@ -18,7 +18,7 @@
       "repository": "openrelik/openrelik-workers/workers/openrelik-worker-bulkextractor",
       "license": "Apache License 2.0",
       "owner": "OpenRelik",
-      "updated_at": "2026-02-27",
+      "updated_at": "2026-03-06",
       "url": "https://github.com/openrelik/openrelik-workers/tree/main/workers/openrelik-worker-bulkextractor",
       "github_stars": 1
     },
@@ -35,7 +35,7 @@
       "repository": "openrelik/openrelik-workers/workers/openrelik-worker-capa",
       "license": "Apache License 2.0",
       "owner": "OpenRelik",
-      "updated_at": "2026-02-27",
+      "updated_at": "2026-03-06",
       "url": "https://github.com/openrelik/openrelik-workers/tree/main/workers/openrelik-worker-capa",
       "github_stars": 1
     },
@@ -46,7 +46,7 @@
       "repository": "openrelik/openrelik-workers/workers/openrelik-worker-chromecreds",
       "license": "Apache License 2.0",
       "owner": "OpenRelik",
-      "updated_at": "2026-02-27",
+      "updated_at": "2026-03-06",
       "url": "https://github.com/openrelik/openrelik-workers/tree/main/workers/openrelik-worker-chromecreds",
       "github_stars": 1
     },
@@ -57,7 +57,7 @@
       "repository": "openrelik/openrelik-workers/workers/openrelik-worker-entropy",
       "license": "Apache License 2.0",
       "owner": "OpenRelik",
-      "updated_at": "2026-02-27",
+      "updated_at": "2026-03-06",
       "url": "https://github.com/openrelik/openrelik-workers/tree/main/workers/openrelik-worker-entropy",
       "github_stars": 1
     },
@@ -68,7 +68,7 @@
       "repository": "openrelik/openrelik-workers/workers/openrelik-worker-analyzer-config",
       "license": "Apache License 2.0",
       "owner": "OpenRelik",
-      "updated_at": "2026-02-27",
+      "updated_at": "2026-03-06",
       "url": "https://github.com/openrelik/openrelik-workers/tree/main/workers/openrelik-worker-analyzer-config",
       "github_stars": 1
     },
@@ -79,7 +79,7 @@
       "repository": "openrelik/openrelik-workers/workers/openrelik-worker-dfindexeddb",
       "license": "Apache License 2.0",
       "owner": "OpenRelik",
-      "updated_at": "2026-02-27",
+      "updated_at": "2026-03-06",
       "url": "https://github.com/openrelik/openrelik-workers/tree/main/workers/openrelik-worker-dfindexeddb",
       "github_stars": 1
     },
@@ -90,7 +90,7 @@
       "repository": "openrelik/openrelik-workers/workers/openrelik-worker-extraction",
       "license": "Apache License 2.0",
       "owner": "OpenRelik",
-      "updated_at": "2026-02-27",
+      "updated_at": "2026-03-06",
       "url": "https://github.com/openrelik/openrelik-workers/tree/main/workers/openrelik-worker-extraction",
       "github_stars": 1
     },
@@ -107,7 +107,7 @@
       "repository": "openrelik/openrelik-workers/workers/openrelik-worker-floss",
       "license": "Apache License 2.0",
       "owner": "OpenRelik",
-      "updated_at": "2026-02-27",
+      "updated_at": "2026-03-06",
       "url": "https://github.com/openrelik/openrelik-workers/tree/main/workers/openrelik-worker-floss",
       "github_stars": 1
     },
@@ -118,7 +118,7 @@
       "repository": "openrelik/openrelik-workers/workers/openrelik-worker-grep",
       "license": "Apache License 2.0",
       "owner": "OpenRelik",
-      "updated_at": "2026-02-27",
+      "updated_at": "2026-03-06",
       "url": "https://github.com/openrelik/openrelik-workers/tree/main/workers/openrelik-worker-grep",
       "github_stars": 1
     },
@@ -129,7 +129,7 @@
       "repository": "openrelik/openrelik-workers/workers/openrelik-worker-llm",
       "license": "Apache License 2.0",
       "owner": "OpenRelik",
-      "updated_at": "2026-02-27",
+      "updated_at": "2026-03-06",
       "url": "https://github.com/openrelik/openrelik-workers/tree/main/workers/openrelik-worker-llm",
       "github_stars": 1
     },
@@ -151,7 +151,7 @@
       "repository": "openrelik/openrelik-workers/workers/openrelik-worker-strings",
       "license": "Apache License 2.0",
       "owner": "OpenRelik",
-      "updated_at": "2026-02-27",
+      "updated_at": "2026-03-06",
       "url": "https://github.com/openrelik/openrelik-workers/tree/main/workers/openrelik-worker-strings",
       "github_stars": 1
     },
@@ -168,7 +168,7 @@
       "repository": "openrelik/openrelik-workers/workers/openrelik-worker-timesketch",
       "license": "Apache License 2.0",
       "owner": "OpenRelik",
-      "updated_at": "2026-02-27",
+      "updated_at": "2026-03-06",
       "url": "https://github.com/openrelik/openrelik-workers/tree/main/workers/openrelik-worker-timesketch",
       "github_stars": 1
     },
@@ -300,7 +300,7 @@
       "repository": "openrelik-contrib/openrelik-worker-hayabusa",
       "license": "Apache License 2.0",
       "owner": "OpenRelik Contrib",
-      "updated_at": "2026-02-10",
+      "updated_at": "2026-03-06",
       "url": "https://github.com/openrelik-contrib/openrelik-worker-hayabusa",
       "github_stars": 3
     },
@@ -362,8 +362,25 @@
       "repository": "dig-sec/openrelik-worker-clamav",
       "license": "N/A",
       "owner": "Pabi",
-      "updated_at": "2026-02-24",
+      "updated_at": "2026-03-03",
       "url": "https://github.com/dig-sec/openrelik-worker-clamav",
+      "github_stars": 0
+    },
+    {
+      "display_name": "openrelik-worker-ghidra",
+      "description": "Secure headless Ghidra analysis worker for deterministic JSON artifacts.",
+      "tools": [
+        {
+          "display_name": "Ghidra",
+          "description": "Software reverse engineering suite for binary analysis and decompilation.",
+          "url": "https://ghidra-sre.org/"
+        }
+      ],
+      "repository": "dig-sec/openrelik-worker-ghidra",
+      "license": "N/A",
+      "owner": "Pabi",
+      "updated_at": "2026-03-05",
+      "url": "https://github.com/dig-sec/openrelik-worker-ghidra",
       "github_stars": 0
     },
     {
