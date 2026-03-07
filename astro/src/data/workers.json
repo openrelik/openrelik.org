@@ -418,6 +418,23 @@
       "github_stars": 0
     },
     {
+      "display_name": "SFTP Upload",
+      "description": "Upload files to a host using SFTP. Can be used with SOF-ELK® for example.",
+      "tools": [
+        {
+          "display_name": "Paramiko",
+          "description": "A Python implementation of SSHv2.",
+          "url": "https://www.paramiko.org/"
+        }
+      ],
+      "repository": "PeterSufliarsky/openrelik-worker-sftp",
+      "license": "MIT License",
+      "owner": "Peter Šufliarsky",
+      "updated_at": "2026-03-06",
+      "url": "https://github.com/PeterSufliarsky/openrelik-worker-sftp",
+      "github_stars": 0
+    },
+    {
       "display_name": "Thor Lite",
       "description": "Scanner for attacker tools and activity",
       "tools": [],
